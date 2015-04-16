@@ -1571,6 +1571,9 @@ article .article-header {
   right: -45px;
   font-size: 80px;
   top: 30px;
+  transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
 }
 #page header a:after {
   content: "{";
@@ -1580,6 +1583,9 @@ article .article-header {
   left: -45px;
   font-size: 80px;
   top: 30px;
+  transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
 }
 #page .subtitle {
   font-size: 22px;
@@ -1782,7 +1788,7 @@ nav a.nav-link#last {
   margin-right: 0px;
 }
 nav a.nav-link.nav-selection {
-  box-shadow: 0px -4px 0px #cccccc inset;
+  box-shadow: 0px -4px 0px #e5e5e5 inset;
 }
 #gears {
   position: absolute;
@@ -1817,6 +1823,15 @@ nav a.nav-link.nav-selection {
 }
 #gears svg .inset circle {
   fill: #434343;
+}
+#gears #mortimer {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+}
+#gears:hover #mortimer {
+  opacity: 0.7;
 }
 .elephant {
   position: absolute;

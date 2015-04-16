@@ -309,9 +309,6 @@ article {
 
             }
             &:hover {
-            //    h1, .subtitle {
-            //     color:@accent;
-            //   }
               &:before{
                 color:@action;
               }
@@ -326,6 +323,9 @@ article {
               right:-45px;
               font-size:80px;
               top:30px;
+              transition: color 0.25s ease-in-out;
+              -moz-transition: color 0.25s ease-in-out;
+              -webkit-transition: color 0.25s ease-in-out;
             }
             &:after{
               content:"{";
@@ -335,6 +335,9 @@ article {
               left:-45px;
               font-size:80px;
               top:30px;
+              transition: color 0.25s ease-in-out;
+              -moz-transition: color 0.25s ease-in-out;
+              -webkit-transition: color 0.25s ease-in-out;
             }
         }
     }
@@ -581,7 +584,7 @@ nav {
           margin-right:0px;
         }
         &.nav-selection {
-          box-shadow: 0px -4px 0px @grey inset;
+          box-shadow: 0px -4px 0px #E5E5E5 inset;
         }
     }
 }
@@ -629,6 +632,21 @@ nav {
 
 
     }
+
+    #mortimer {
+        opacity: 1;
+         transition: opacity 0.5s ease-in-out;
+         -moz-transition: opacity 0.5s ease-in-out;
+         -webkit-transition: opacity 0.5s ease-in-out;
+    }
+
+    &:hover {
+      #mortimer {
+        opacity:0.7;
+      }
+
+    }
+
 }
 
 
