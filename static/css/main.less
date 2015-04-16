@@ -266,6 +266,10 @@ article {
     header h1 {
       font-size:2em;
     }
+    .article-header {
+      padding-top:10px;
+      padding-bottom:10px;
+    }
 }
 
 #page {
@@ -321,7 +325,7 @@ article {
               position:absolute;
               right:-45px;
               font-size:80px;
-              top:20px;
+              top:30px;
             }
             &:after{
               content:"{";
@@ -330,7 +334,7 @@ article {
               position:absolute;
               left:-45px;
               font-size:80px;
-              top:20px;
+              top:30px;
             }
         }
     }
@@ -557,10 +561,8 @@ header.logo {
 nav {
     display: inline-block;
     position:relative;
-    left:-11px;
+    left:-2px;
     z-index: 30;
-    // margin-left: 10px;
-
     margin:25px 0;
     display:block;
     font-size:18px;
@@ -571,12 +573,15 @@ nav {
 
     a.nav-link {
         position:relative;
-        
         text-align:left;
         width:100px;
         margin-right: 20px;
+        
         &#last {
           margin-right:0px;
+        }
+        &.nav-selection {
+          box-shadow: 0px -4px 0px @grey inset;
         }
     }
 }

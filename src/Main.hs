@@ -1,15 +1,9 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Control.Monad          (forM,forM_)
-import           Data.List              (sortBy,isInfixOf)
-import           Data.Monoid            ((<>),mconcat,mappend)
-import           Data.Ord               (comparing)
+import           Data.Monoid            (mappend)
 import           Hakyll
-import           System.Locale          (defaultTimeLocale)
 import           System.FilePath.Posix  (takeBaseName, takeDirectory
-                                        , (</>), splitFileName
-                                        , replaceDirectory
-                                        , replaceExtension)
+                                        , (</>), replaceDirectory )
 
 --------------------------------------------------------------------------------
 
@@ -33,7 +27,6 @@ baseRouteHTML = customRoute base
 
 
 
-
 main :: IO ()
 main = hakyll $ do
 
@@ -49,10 +42,13 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["pages/about.rst", "pages/contact.markdown"]) $ do
+    match "pages/about.rst" $ do
         route   $ baseRouteHTML 
+        let aboutCtx =
+                    constField "nav-selection-about" "true"        `mappend`
+                    defaultContext
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
 
     match "posts/*" $ do
@@ -61,14 +57,11 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
-            -- >>= removeIndexHtml
 
     match "posts/*" $ version "brief" $ do
-        route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= relativizeUrls
-
 
     create ["archive.html"] $ do
         route niceRoute
@@ -76,27 +69,28 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll ("posts/*" .&&. hasNoVersion)
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    constField "title" "Archive"            `mappend`
+                    constField "nav-selection-archive" "true"        `mappend`
                     defaultContext
 
             makeItem ""
-                -- >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
                 >>= relativizeUrls
 
-
-    match "pages/index.html" $ do
-        route baseRoute
+    create ["index.html"] $ do
+        route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll ("posts/*" .&&. hasVersion "brief")
             let indexCtx =
                     listField "posts" postCtx (return (take 5 posts)) `mappend`
+                    constField "title" "Home"                         `mappend`
+                    constField "nav-selection-thoughts" "true"        `mappend`
                     defaultContext
 
-            pandocCompiler
+            makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
-                >>= loadAndApplyTemplate "templates/base.html" defaultContext
+                >>= loadAndApplyTemplate "templates/base.html" indexCtx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler

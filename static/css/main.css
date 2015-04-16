@@ -1525,6 +1525,10 @@ article h1 {
 article header h1 {
   font-size: 2em;
 }
+article .article-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 #page {
   height: 100%;
   min-height: 400px;
@@ -1566,7 +1570,7 @@ article header h1 {
   position: absolute;
   right: -45px;
   font-size: 80px;
-  top: 20px;
+  top: 30px;
 }
 #page header a:after {
   content: "{";
@@ -1575,7 +1579,7 @@ article header h1 {
   position: absolute;
   left: -45px;
   font-size: 80px;
-  top: 20px;
+  top: 30px;
 }
 #page .subtitle {
   font-size: 22px;
@@ -1758,7 +1762,7 @@ header.logo #description:after {
 nav {
   display: inline-block;
   position: relative;
-  left: -11px;
+  left: -2px;
   z-index: 30;
   margin: 25px 0;
   display: block;
@@ -1776,6 +1780,9 @@ nav a.nav-link {
 }
 nav a.nav-link#last {
   margin-right: 0px;
+}
+nav a.nav-link.nav-selection {
+  box-shadow: 0px -4px 0px #cccccc inset;
 }
 #gears {
   position: absolute;

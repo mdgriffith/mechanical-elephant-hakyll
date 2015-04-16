@@ -25,9 +25,24 @@
                 </div>
             </a>
             <nav>
-                <a class="nav-link" href="/">Thoughts</a>
-                <a class="nav-link" href="/archive/">Archive</a>
-                <a class="nav-link" id="last" href="/about">About</a>
+                $if(nav-selection-thoughts)$
+                    <a class="nav-link nav-selection" href="/">Thoughts</a>
+                $else$
+                    <a class="nav-link" href="/">Thoughts</a>
+                $endif$
+
+                $if(nav-selection-archive)$
+                    <a class="nav-link nav-selection" href="/archive">Archive</a>
+                $else$
+                    <a class="nav-link" href="/archive">Archive</a>
+                $endif$
+
+                $if(nav-selection-about)$
+                    <a class="nav-link nav-selection" href="/about">About</a>
+                $else$
+                    <a class="nav-link" href="/about">About</a>
+                $endif$
+                
             </nav>
             <div class="break">$partial("templates/break.svg")$</div>
         </header>
