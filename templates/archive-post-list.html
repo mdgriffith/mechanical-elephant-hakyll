@@ -1,10 +1,12 @@
 $for(posts)$
   <article>
     <header>
-        <a href="$url$" >
-            <h1>$Title$</h1>
-            <div class="subtitle">$Subtitle$</div>
-        </a>
+      <a href="$url$" >
+        <div class="article-header">
+          <h1>$Title$</h1>
+          <div class="subtitle">$Subtitle$</div>
+        </div>
+      </a>
     </header>
     <div class="break">$partial("templates/break.svg")$</div>
   </article>
