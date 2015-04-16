@@ -577,14 +577,25 @@ nav {
     a.nav-link {
         position:relative;
         text-align:left;
-        width:100px;
+        // width:100px;
         margin-right: 20px;
-        
+        line-height:1em;
+        display:inline-block;
+        border-bottom:4px solid transparent;
+        transition: border-bottom-color 0.25s ease-in-out;
+        -moz-transition: border-bottom-color 0.25s ease-in-out;
+        -webkit-transition: border-bottom-color 0.25s ease-in-out;
+        &:hover {
+          border-bottom-color:@darkest;
+        }
         &#last {
           margin-right:0px;
         }
         &.nav-selection {
-          box-shadow: 0px -4px 0px #E5E5E5 inset;
+           border-bottom-color:#E5E5E5;
+          &:hover {
+             border-bottom-color:@darkest;
+          }
         }
     }
 }
