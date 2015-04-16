@@ -29,12 +29,19 @@ baseRoute = customRoute base
 baseRouteHTML :: Routes
 baseRouteHTML = customRoute base
   where
-    base ident = replaceExtension (replaceDirectory (toFilePath ident) "") "html"
+    base ident = takeDirectory (replaceDirectory (toFilePath ident) "") </> takeBaseName (toFilePath ident) </> "index.html"
+
+
 
 
 main :: IO ()
 main = hakyll $ do
-    match "static/images/*" $ do
+
+    match "static/favicon.ico" $ do
+        route   baseRoute
+        compile copyFileCompiler
+
+    match "static/img/*" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -45,15 +52,14 @@ main = hakyll $ do
     match (fromList ["pages/about.rst", "pages/contact.markdown"]) $ do
         route   $ baseRouteHTML 
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
 
     match "posts/*" $ do
-        -- route $ setExtension "html"
         route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
             -- >>= removeIndexHtml
 
@@ -67,8 +73,8 @@ main = hakyll $ do
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                -- >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/base.html" archiveCtx
                 >>= relativizeUrls
 
 
@@ -83,7 +89,7 @@ main = hakyll $ do
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+                >>= loadAndApplyTemplate "templates/base.html" indexCtx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler

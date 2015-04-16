@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mechanical Elephant</title>
+        <meta name="description" content="Mechanical Elephant is a design and technical studio created by Matthew Griffith. This is about their creative process.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato|Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+        <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+        <!-- head -->
+    </head>
+    <body>
+        <header class="container logo">
+            <h1>Mechanical Elephant</h1>
+            <a href="/">
+                <div id="gears">
+                    <img id="skull" class="elephant" src="/static/img/darker.png" width="170" height="233" />
+                    <img id="mortimer" class="elephant" src="/static/img/coverclean.png" width="170" height="233" />
+                    $partial("templates/planetary.svg")$
+                </div>
+            </a>
+            <nav>
+                <a class="nav-link" href="/">Blog</a>
+                <a class="nav-link" href="/archives">Archive</a>
+                <a class="nav-link" id="last" href="/about">About</a>
+            </nav>
+            <div class="break">$partial("templates/break.svg")$</div>
+        </header>
+
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="page" class="container {% block page %}{% endblock %}">
+            <!-- content -->
+            $body$
+        </div>
+
+        <footer>
+            <div class="container copyright">copyright Matthew Griffith 2015</div>
+        </footer>
+
+        <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"><\/script>')</script>
+        <!-- // <script src="/static/js/svggears.js"></script> -->
+        <script type="text/javascript">
+            $$(document).ready(function(){
+                $$("#gears").hover(function(){
+                    $$("#gears #mortimer").fadeTo(300, 0.9);
+                },function(){
+                    $$("#gears #mortimer").fadeTo(300, 1);
+                })
+            });
+        </script>
+        <!-- Piwik -->
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.mechanical-elephant.com/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', 1]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+            g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+        <noscript><p><img src="http://analytics.mechanical-elephant.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+        <!-- End Piwik Code -->
+    </body>
+</html>
