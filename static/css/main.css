@@ -1498,9 +1498,15 @@ body {
   background-color: #fcfcfc;
   color: #333332;
   background-color: #fafafa;
+  font-size: 18px;
 }
 h1 {
-  position: relative;
+  color: #111111;
+  font-size: 38px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
 }
 a {
   color: #c19849;
@@ -1513,12 +1519,18 @@ a {
   width: 660px;
   padding-left: 220px;
 }
+article h1 {
+  font-size: 1.6em;
+}
+article header h1 {
+  font-size: 2em;
+}
 #page {
   height: 100%;
   min-height: 400px;
   margin-bottom: 10px;
   position: relative;
-  margin-top: 80px;
+  margin-top: 60px;
   padding-bottom: 40px;
 }
 #page .titlebreak {
@@ -1528,20 +1540,13 @@ a {
   display: none;
 }
 #page header {
-  font-size: 38px;
   color: #777777;
   position: relative;
   padding: 0px;
   z-index: 5;
   background-image: none;
   text-align: center;
-}
-#page header h1 {
-  color: #111111;
-  font-size: 0.9em;
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
+  margin-bottom: 65px;
 }
 #page header a {
   color: #111111;
@@ -1549,12 +1554,26 @@ a {
 #page header a h1 {
   color: #111111;
 }
-#page header a:before {
-  content: "{";
+#page header a:hover:before {
   color: #c19849;
+}
+#page header a:hover:after {
+  color: #c19849;
+}
+#page header a:before {
+  content: "}";
+  color: #CCC;
+  position: absolute;
+  right: -45px;
+  font-size: 80px;
+  top: 20px;
+}
+#page header a:after {
+  content: "{";
+  color: #CCC;
   float: left;
-  position: relative;
-  left: -95px;
+  position: absolute;
+  left: -45px;
   font-size: 80px;
   top: 20px;
 }
@@ -1563,8 +1582,6 @@ a {
   color: #838994;
 }
 #page p {
-  font-weight: 300;
-  font-size: 18px;
   margin-bottom: 35px;
   margin-top: 10px;
   line-height: 1.6;
@@ -1741,8 +1758,9 @@ header.logo #description:after {
 nav {
   display: inline-block;
   position: relative;
+  left: -11px;
   z-index: 30;
-  margin-top: 5px;
+  margin: 25px 0;
   display: block;
   font-size: 18px;
   color: #c19849;

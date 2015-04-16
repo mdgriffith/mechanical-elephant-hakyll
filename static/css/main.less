@@ -226,11 +226,15 @@ body {
     background-color:@white;
     color:#333332;
     background-color:@light;
-    
+    font-size:18px;
 }
 h1 {
- .decorativeFont();
- position:relative;
+  color:@darkest;
+  font-size:38px;
+  font-weight:normal;
+  padding:0;
+  margin:0;
+  margin-bottom:8px;
 }
 h2 {
   .decorativeFont();
@@ -256,6 +260,12 @@ a {
 article {
     // position:relative;
     // padding-bottom:0px;
+    h1 {
+      font-size:1.6em;
+    }
+    header h1 {
+      font-size:2em;
+    }
 }
 
 #page {
@@ -265,7 +275,7 @@ article {
     margin-bottom:10px;
 
     position:relative;
-    margin-top:80px;
+    margin-top:60px;
     padding-bottom:40px;
 
     .titlebreak {
@@ -278,46 +288,47 @@ article {
       display:none;
 
     }
-    header {
-        .header();
+    
+      header {
         color:@darker;
         position:relative;
         padding:0px;
-        // padding-bottom:100px;
-        // width:100%;
         z-index:5;
-    
         background-image: none;
         text-align: center;
-        h1 {
-          color:@darkest;
-          font-size:0.9em;
-          font-weight:normal;
-          padding:0;
-          margin:0;
-
-        }
-
-       
-
-
+        margin-bottom:65px;
         a {
             color:@darkest;
             h1 {
               color:@darkest;
               // color:@darker;
+
             }
-            // &:hover {
+            &:hover {
             //    h1, .subtitle {
             //     color:@accent;
             //   }
-            // }
+              &:before{
+                color:@action;
+              }
+              &:after{
+                color:@action;
+              }
+            }
             &:before{
+              content:"}";
+              color:#CCC;
+              position:absolute;
+              right:-45px;
+              font-size:80px;
+              top:20px;
+            }
+            &:after{
               content:"{";
-              color:@action;
+              color:#CCC;
               float:left;
-              position:relative;
-              left:-95px;
+              position:absolute;
+              left:-45px;
               font-size:80px;
               top:20px;
             }
@@ -328,9 +339,7 @@ article {
       color:#838994;
     }
     p {
-        // font-family:"Helvetica", "Open Sans";
-        font-weight:300;
-        font-size:18px;
+        // font-weight:300;
         margin-bottom:35px;
         margin-top:10px;
         line-height:1.6;
@@ -548,10 +557,11 @@ header.logo {
 nav {
     display: inline-block;
     position:relative;
+    left:-11px;
     z-index: 30;
     // margin-left: 10px;
 
-    margin-top:5px;
+    margin:25px 0;
     display:block;
     font-size:18px;
     color:@action;
@@ -561,9 +571,7 @@ nav {
 
     a.nav-link {
         position:relative;
-        // .small;
         
-        // text-transform: uppercase;
         text-align:left;
         width:100px;
         margin-right: 20px;

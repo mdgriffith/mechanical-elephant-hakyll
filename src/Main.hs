@@ -58,15 +58,22 @@ main = hakyll $ do
     match "posts/*" $ do
         route $ niceRoute
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
             -- >>= removeIndexHtml
 
+    match "posts/*" $ version "brief" $ do
+        route $ niceRoute
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html" postCtx
+            >>= relativizeUrls
+
+
     create ["archive.html"] $ do
         route niceRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll ("posts/*" .&&. hasNoVersion)
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
@@ -74,6 +81,7 @@ main = hakyll $ do
 
             makeItem ""
                 -- >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
                 >>= relativizeUrls
 
@@ -81,15 +89,14 @@ main = hakyll $ do
     match "pages/index.html" $ do
         route baseRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll ("posts/*" .&&. hasVersion "brief")
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
+                    listField "posts" postCtx (return (take 5 posts)) `mappend`
                     defaultContext
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/base.html" indexCtx
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
+                >>= loadAndApplyTemplate "templates/base.html" defaultContext
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler
