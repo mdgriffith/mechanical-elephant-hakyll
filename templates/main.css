@@ -509,6 +509,7 @@ th {
   background-color: #eeeeee;
   padding: 20px;
   margin-left: -20px;
+  margin-right: -20px;
   box-sizing: content-box;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -636,7 +637,7 @@ hr {
 }
 .container {
   width: 660px;
-  padding-left: 220px;
+  margin-left: 220px;
 }
 article {
   padding-top: 25px;
@@ -656,8 +657,11 @@ article .article-header {
   min-height: 400px;
   position: relative;
   margin-bottom: 10px;
-  margin-top: 60px;
+  margin-top: 40px;
   padding-bottom: 40px;
+  box-sizing: padding-box;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 #page header {
   color: #777777;
@@ -787,7 +791,7 @@ nav a.nav-link.nav-selection:hover {
   display: block;
   position: absolute;
   top: -55px;
-  left: 40px;
+  left: -180px;
   width: 170px;
   height: 120px;
   margin-left: auto;

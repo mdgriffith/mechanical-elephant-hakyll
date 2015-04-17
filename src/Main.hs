@@ -38,11 +38,11 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "static/css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+    -- match "static/css/*" $ do
+    --     route   idRoute
+    --     compile compressCssCompiler
 
-    match "pages/about.rst" $ do
+    match "pages/about.markdown" $ do
         route   $ baseRouteHTML 
         let aboutCtx =
                     constField "nav-selection-about" "true"        `mappend`
