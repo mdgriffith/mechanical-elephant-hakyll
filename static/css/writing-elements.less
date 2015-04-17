@@ -15,6 +15,27 @@
     .drop();
 }
 
+#page .boxed {
+  background-color:@lighter;
+  padding:20px;
+  margin-left:-20px;
+  box-sizing: content-box;
+  .rounded(7px);
+  p:first-of-type {
+    padding-top:0;
+    margin-top:0;
+  }
+  p:last-of-type {
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+  &.drop-first {
+    p:first-of-type::first-letter {
+      .drop();
+    }
+  }
+}
+
 
 blockquote {
   font-style: italic;

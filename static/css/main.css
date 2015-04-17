@@ -505,6 +505,36 @@ th {
   padding-top: 6px;
   float: left;
 }
+#page .boxed {
+  background-color: #eeeeee;
+  padding: 20px;
+  margin-left: -20px;
+  box-sizing: content-box;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  /* future proofing */
+  -khtml-border-radius: 7px;
+  /* for old Konqueror browsers */
+}
+#page .boxed p:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+}
+#page .boxed p:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#page .boxed.drop-first p:first-of-type::first-letter {
+  font-family: Cardo, georgia;
+  position: relative;
+  font-size: 3.5em;
+  line-height: 0.9em;
+  padding-right: 6px;
+  padding-left: 3px;
+  padding-top: 6px;
+  float: left;
+}
 blockquote {
   font-style: italic;
   -webkit-margin-before: 1em;
@@ -699,9 +729,6 @@ article .article-header {
   margin-right: 0px;
   margin-left: 60px;
 }
-#page.archive .drop-first::first-letter {
-  padding-top: 4px;
-}
 header.logo {
   position: relative;
   margin-top: 80px;
@@ -755,33 +782,6 @@ nav a.nav-link.nav-selection {
 }
 nav a.nav-link.nav-selection:hover {
   border-bottom-color: #111111;
-}
-#page .about-intro {
-  background-color: #eeeeee;
-  padding: 20px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
-  /* future proofing */
-  -khtml-border-radius: 7px;
-  /* for old Konqueror browsers */
-}
-#page .about-intro p::first-letter {
-  font-family: Cardo, georgia;
-  position: relative;
-  font-size: 3.5em;
-  line-height: 0.9em;
-  padding-right: 6px;
-  padding-left: 3px;
-  padding-top: 6px;
-  float: left;
-}
-#page .about-intro p {
-  padding: 0;
-  margin: 0;
-}
-#page .about-content {
-  padding: 0 20px;
 }
 #gears {
   display: block;
