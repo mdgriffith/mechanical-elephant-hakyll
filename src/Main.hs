@@ -47,6 +47,12 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
 
+    match "pages/styleguide.markdown" $ do
+        route   $ baseRouteHTML 
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= relativizeUrls
+
     match "thoughts/*" $ do
         route $ niceRoute
         compile $ pandocCompiler

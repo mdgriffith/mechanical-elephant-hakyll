@@ -2,6 +2,226 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "18493",
 "files": {
+	"\/design\/webimages\/backskull.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 505817,
+		"inputAbbreviatedPath": "\/design\/webimages\/backskull.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/backskull.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/backskull2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 492064,
+		"inputAbbreviatedPath": "\/design\/webimages\/backskull2.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/backskull2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/Ghost.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 306652,
+		"inputAbbreviatedPath": "\/design\/webimages\/Ghost.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/Ghost.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/dark.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 224115,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/dark.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/dark.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/darker.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 189574,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/darker.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/darker.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/Gray.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 339823,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/Gray.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/Gray.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/HeadRemoved.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 345981,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemoved.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemoved.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/HeadRemovedCleaned.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 337993,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemovedCleaned.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemovedCleaned.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/logo\/HeadRemovedLight.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 336854,
+		"inputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemovedLight.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/logo\/HeadRemovedLight.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephant.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 859128,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephant.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephant.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantLight.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 502924,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLight.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLight.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantLightHole.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 489513,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantLightHole2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 503481,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole2.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantLightHole3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 500569,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole3.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightHole3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantLightLines.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 270123,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightLines.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantLightLines.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantWhite.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 337131,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantWhite_Cleared.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 362363,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite_Cleared.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite_Cleared.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantWhite_SuperClean.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 359331,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite_SuperClean.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhite_SuperClean.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantWhiteCleared2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 280147,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhiteCleared2.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhiteCleared2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/design\/webimages\/MechanicalElephantWhiteCleared_3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 304238,
+		"inputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhiteCleared_3.png",
+		"outputAbbreviatedPath": "\/design\/webimages\/MechanicalElephantWhiteCleared_3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/README.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
@@ -132,14 +352,25 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/static\/css\/main.css": {
-		"fileType": 16,
+	"\/static\/css\/code.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/css\/main.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/static\/css\/code.less",
+		"outputAbbreviatedPath": "\/static\/css\/code.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
 		},
 	"\/static\/css\/main.less": {
 		"allowInsecureImports": 0,
@@ -240,6 +471,30 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/thoughts\/draft\/From_Python_to_Haskell_Functors.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/thoughts\/draft\/From_Python_to_Haskell_Functors.md",
+		"outputAbbreviatedPath": "\/thoughts\/draft\/From_Python_to_Haskell_Functors.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/thoughts\/draft\/hardwork.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/thoughts\/draft\/hardwork.md",
+		"outputAbbreviatedPath": "\/thoughts\/draft\/hardwork.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [

@@ -1,0 +1,50 @@
+pre {
+    position:relative;
+    background-color: #333;
+    left:-75px;
+    padding-left:75px;
+    padding-right:75px;
+    padding-bottom:40px;
+    padding-top:30px;
+}
+
+@keyword: #d76a6c;
+@int: #f6d298;
+@operator: #FFF;
+
+.sourceCode { color: @keyword}
+// KeyWordTok
+.sourceCode .kw { color: @keyword; }
+// DataTypeTok
+.sourceCode .dt { color: @keyword; }
+
+// DecValTok (decimal value), BaseNTok, FloatTok
+.sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: @int; }
+
+// Highlights the function (->)
+.sourceCode .ot { color:@operator }
+
+//Type signatures
+.sourceCode .dt { color:@int }
+
+// // CharTok
+// .sourceCode .ch { color: #DC322F; }
+// // StringTok
+// .sourceCode .st { color: #2AA198; }
+// // CommentTok
+.sourceCode .co { color: @grey; }
+// // OtherTok
+// .sourceCode .ot { color: #A57800; }
+// // AlertTok
+// .sourceCode .al { color: #CB4B16; font-weight: bold; }
+// FunctionTok
+.sourceCode .fu { color: @operator; }
+// // RegionMarkerTok
+// .sourceCode .re { }
+// // ErrorTok
+// .sourceCode .er { color: #D30102; font-weight: bold; }
+
+
+
+
+

@@ -587,6 +587,41 @@ blockquote:before {
   line-height: 1.0em;
   top: -5px;
 }
+pre {
+  position: relative;
+  background-color: #333;
+  left: -75px;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+.sourceCode {
+  color: #d76a6c;
+}
+.sourceCode .kw {
+  color: #d76a6c;
+}
+.sourceCode .dt {
+  color: #d76a6c;
+}
+.sourceCode .dv,
+.sourceCode .bn,
+.sourceCode .fl {
+  color: #f6d298;
+}
+.sourceCode .ot {
+  color: #ffffff;
+}
+.sourceCode .dt {
+  color: #f6d298;
+}
+.sourceCode .co {
+  color: #cccccc;
+}
+.sourceCode .fu {
+  color: #ffffff;
+}
 body {
   font-family: Cardo, Georgia;
   -webkit-font-smoothing: antialiased;
