@@ -557,9 +557,6 @@ blockquote:before {
   font-size: 0.75em;
   letter-spacing: 2px;
 }
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 .brackets:before {
   position: absolute;
   content: "{";

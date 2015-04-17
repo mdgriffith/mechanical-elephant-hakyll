@@ -38,10 +38,6 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    -- match "static/css/*" $ do
-    --     route   idRoute
-    --     compile compressCssCompiler
-
     match "pages/about.markdown" $ do
         route   $ baseRouteHTML 
         let aboutCtx =
@@ -51,14 +47,14 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
 
-    match "posts/*" $ do
+    match "thoughts/*" $ do
         route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
 
-    match "posts/*" $ version "brief" $ do
+    match "thoughts/*" $ version "brief" $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= relativizeUrls
@@ -66,7 +62,7 @@ main = hakyll $ do
     create ["archive.html"] $ do
         route niceRoute
         compile $ do
-            posts <- recentFirst =<< loadAll ("posts/*" .&&. hasNoVersion)
+            posts <- recentFirst =<< loadAll ("thoughts/*" .&&. hasNoVersion)
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archive"            `mappend`
@@ -81,7 +77,7 @@ main = hakyll $ do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll ("posts/*" .&&. hasVersion "brief")
+            posts <- recentFirst =<< loadAll ("thoughts/*" .&&. hasVersion "brief")
             let indexCtx =
                     listField "posts" postCtx (return (take 5 posts)) `mappend`
                     constField "title" "Home"                         `mappend`
