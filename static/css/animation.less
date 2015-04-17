@@ -1,0 +1,107 @@
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes reverse-rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes reverse-rotating {
+  from {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+
+.rotate(@radius) {
+  -webkit-animation: rotating (@radius*162ms) linear infinite;
+  -moz-animation: rotating (@radius*162ms) linear infinite;
+  -ms-animation: rotating (@radius*162ms) linear infinite;
+  -o-animation: rotating (@radius*162ms) linear infinite;
+  animation: rotating (@radius*162ms) linear infinite;
+}
+.rotate-rev(@radius) {
+  -webkit-animation: reverse-rotating (@radius*162ms) linear infinite;
+  -moz-animation: reverse-rotating (@radius*162ms) linear infinite;
+  -ms-animation: reverse-rotating (@radius*162ms) linear infinite;
+  -o-animation: reverse-rotating (@radius*162ms) linear infinite;
+  animation: reverse-rotating (@radius*162ms) linear infinite;
+}
+.anim-rotate-60 {
+  .rotate(60);
+}
+.anim-rotate-35 {
+  .rotate(35);
+}
+.anim-rotate-35-rev {
+  .rotate-rev(35);
+}
+.anim-rotate-55-rev {
+  .rotate-rev(55);
+}
+.anim-rotate-55 {
+  .rotate(55);
+}
+.anim-rotate-185 {
+  .rotate(185);
+}
+.anim-rotate-95-rev {
+  .rotate-rev(95);
+}
+.anim-rotate-185-rev {
+  .rotate-rev(185);
+}

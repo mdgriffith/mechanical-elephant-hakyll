@@ -1,0 +1,83 @@
+
+//-------------------------
+// Style Mixins
+//-------------------------
+
+//Rounded Corners
+.rounded (@radius: 5px){
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius; /* future proofing */
+    -khtml-border-radius: @radius; /* for old Konqueror browsers */
+}
+
+//Shadows
+.innershadow() {
+   -moz-box-shadow:    inset 0px 1px 5px 3px @grey;
+   -webkit-box-shadow: inset 0px 1px 5px 3px @grey;
+   box-shadow:         inset 0px 1px 5px 3px @grey;
+}
+
+.shadow() {
+   -moz-box-shadow:    6px 6px 5px 1px @dark;
+   -webkit-box-shadow: 6px 6px 5px 1px @dark;
+   box-shadow:         6px 6px 5px 1px @dark;
+}
+
+.thinshadow() {
+   -moz-box-shadow:    1px 1px 2px 1px @dark;
+   -webkit-box-shadow: 1px 1px 2px 1px @dark;
+   box-shadow:         1px 1px 2px 1px @dark;
+}
+
+
+.border() {
+
+}
+
+
+.stretch(@x, @y) {
+    display:inline-block;
+    transform:scale(@x, @y); /* W3C */
+    -webkit-transform:scale(@x, @y); /* Safari and Chrome */
+    -moz-transform:scale(@x, @y); /* Firefox */
+    -ms-transform:scale(@x, @y); /* IE 9 */
+    -o-transform:scale(@x, @y); /* Opera */
+}
+
+
+.brackets {
+  &:before{
+      position:absolute;
+      content: "{";
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: inherit;
+      -webkit-font-smoothing: antialiased;
+      left:-60px;
+      top:-5px;
+      display:inline-block;
+      // color:@action;
+      color:#eee;
+      .header();
+      font-size:4.7em;
+      line-height:1.0em;
+  }
+  &:after{
+      position:absolute;
+      content: "}";
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: inherit;
+      -webkit-font-smoothing: antialiased;
+      right:-60px;
+      display:inline-block;
+      // color:@action;
+      color:#eee;
+      .header();
+      font-size:4.7em;
+      line-height:1.0em;
+      top:-5px;
+
+  }
+}

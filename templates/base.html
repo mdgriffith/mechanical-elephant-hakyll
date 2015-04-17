@@ -11,16 +11,14 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="/static/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Lato&text=MECHANICALELEPHANT|Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
-        <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
-        <!-- head -->
     </head>
     <body>
         <header class="container logo">
             <h1>Mechanical Elephant</h1>
             <a href="/">
                 <div id="gears">
-                    <img id="skull" class="elephant" src="/static/img/darker.png" width="170" height="233" />
-                    <img id="mortimer" class="elephant" src="/static/img/coverclean.png" width="170" height="233" />
+                    <img id="skull" class="elephant" src="/static/img/dark.png" width="170" height="233" />
+                    <img id="mortimer" class="elephant" src="/static/img/cover.png" width="170" height="233" />
                     $partial("templates/planetary.svg")$
                 </div>
             </a>
@@ -42,9 +40,8 @@
                 $else$
                     <a class="nav-link" href="/about">About</a>
                 $endif$
-                
             </nav>
-            <div class="break">$partial("templates/break.svg")$</div>
+            $partial("templates/break.svg")$
         </header>
 
 

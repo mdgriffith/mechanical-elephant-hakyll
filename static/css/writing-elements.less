@@ -1,0 +1,41 @@
+
+
+.drop {
+    font-family:Cardo, georgia;
+    position:relative;
+    font-size:3.5em;
+    line-height:0.9em;
+    padding-right:6px;
+    padding-left:3px;
+    padding-top:6px;
+    float:left;
+}
+
+.drop-first::first-letter {
+    .drop();
+}
+
+
+blockquote {
+  font-style: italic;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 80px;
+  -webkit-margin-end: 80px;
+  &:before {
+    content: "\201C";
+    font-size: 75px;
+    margin-left: -62px;
+    font-family: georgia,serif;
+    color: #ccc;
+    position: absolute;
+    margin-top: 14px;
+  }
+}
+
+
+.run-in {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 2px;
+}
