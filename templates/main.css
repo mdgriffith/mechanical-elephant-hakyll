@@ -671,6 +671,12 @@ hr {
 .container {
   width: 660px;
   margin-left: 220px;
+  transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  -webkit-transition: margin-left 0.5s ease-in-out;
 }
 article {
   padding-top: 25px;
@@ -783,6 +789,9 @@ header.logo h1 {
   font-family: Lato;
   text-transform: uppercase;
   padding: 5px;
+  transition: font-size 0.5s ease-in-out;
+  -moz-transition: font-size 0.5s ease-in-out;
+  -webkit-transition: font-size 0.5s ease-in-out;
 }
 nav {
   display: inline-block;
@@ -830,6 +839,9 @@ nav a.nav-link.nav-selection:hover {
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
+  transition: left 0.5s ease-in-out;
+  -moz-transition: left 0.5s ease-in-out;
+  -webkit-transition: left 0.5s ease-in-out;
 }
 #gears svg {
   position: absolute;
@@ -1020,406 +1032,155 @@ footer {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */
-  header #description {
-    width: 350px;
+  .container {
+    margin-left: 0px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
+  header.logo h1 {
+    font-size: 20px;
+  }
+  #page header a:before {
     display: none;
   }
-  header #description:after {
+  #page header a:after {
     display: none;
-  }
-  nav .container {
-    width: 330px;
-  }
-  .top-bar {
-    height: 0px;
-    overflow: hidden;
-  }
-  blockquote {
-    font-style: italic;
-    -webkit-margin-before: 10px;
-    -webkit-margin-after: 10px;
-    -webkit-margin-start: 10px;
-    -webkit-margin-end: 10px;
-  }
-  blockquote:before {
-    content: "\201C";
-    font-size: 75px;
-    margin-left: -40px;
-    font-family: georgia,serif;
-    color: #ccc;
-    position: absolute;
-    margin-top: 14px;
-  }
-  #main {
-    width: 300px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
   }
 }
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
   /* Styles */
-  header #description {
-    width: 350px;
+  .container {
+    margin-left: 0px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
+  header.logo h1 {
+    font-size: 20px;
+  }
+  #page header a:before {
     display: none;
   }
-  header #description:after {
+  #page header a:after {
     display: none;
-  }
-  nav .container {
-    width: 330px;
-  }
-  .top-bar {
-    height: 0px;
-    overflow: hidden;
-  }
-  blockquote {
-    font-style: italic;
-    -webkit-margin-before: 10px;
-    -webkit-margin-after: 10px;
-    -webkit-margin-start: 10px;
-    -webkit-margin-end: 10px;
-  }
-  blockquote:before {
-    content: "\201C";
-    font-size: 75px;
-    margin-left: -40px;
-    font-family: georgia,serif;
-    color: #ccc;
-    position: absolute;
-    margin-top: 14px;
-  }
-  #main {
-    width: 300px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
   }
 }
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   /* Styles */
-  header #description {
-    width: 350px;
+  .container {
+    margin-left: 0px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
+  header.logo h1 {
+    font-size: 20px;
+  }
+  #page header a:before {
     display: none;
   }
-  header #description:after {
+  #page header a:after {
     display: none;
-  }
-  nav .container {
-    width: 330px;
-  }
-  .top-bar {
-    height: 0px;
-    overflow: hidden;
-  }
-  blockquote {
-    font-style: italic;
-    -webkit-margin-before: 10px;
-    -webkit-margin-after: 10px;
-    -webkit-margin-start: 10px;
-    -webkit-margin-end: 10px;
-  }
-  blockquote:before {
-    content: "\201C";
-    font-size: 75px;
-    margin-left: -40px;
-    font-family: georgia,serif;
-    color: #ccc;
-    position: absolute;
-    margin-top: 14px;
-  }
-  #main {
-    width: 300px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
   }
 }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Styles */
-  header #description {
-    width: 500px;
+  .container {
+    margin-left: 100px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 30px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 660px;
-  }
-  .top-bar .container .goldgear {
-    display: none;
-  }
-  .top-bar .container a {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    margin: 0;
-    float: none;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-  }
-  .top-bar .container a#last {
-    margin: 0;
-  }
-  nav .container {
-    width: 500px;
-  }
-  #main {
-    width: 600px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
+  header.logo #gears {
+    left: -80px;
   }
 }
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Styles */
-  header #description {
-    width: 500px;
+  .container {
+    margin-left: 100px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 30px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 660px;
-  }
-  .top-bar .container .goldgear {
-    display: none;
-  }
-  .top-bar .container a {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    margin: 0;
-    float: none;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-  }
-  .top-bar .container a#last {
-    margin: 0;
-  }
-  nav .container {
-    width: 500px;
-  }
-  #main {
-    width: 600px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
+  header.logo #gears {
+    left: -80px;
   }
 }
 @media only screen and (min-width: 768px) {
   /* Styles */
-  header #description {
-    width: 500px;
+  .container {
+    margin-left: 100px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 30px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 660px;
-  }
-  .top-bar .container .goldgear {
-    display: none;
-  }
-  .top-bar .container a {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    margin: 0;
-    float: none;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-  }
-  .top-bar .container a#last {
-    margin: 0;
-  }
-  nav .container {
-    width: 500px;
-  }
-  #main {
-    width: 600px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
+  header.logo #gears {
+    left: -80px;
   }
 }
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   /* Styles */
-  header #description {
-    width: 500px;
+  .container {
+    margin-left: 100px;
+    width: 100%;
+    max-width: 660px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 30px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 660px;
-  }
-  .top-bar .container .goldgear {
-    display: none;
-  }
-  .top-bar .container a {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    margin: 0;
-    float: none;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-  }
-  .top-bar .container a#last {
-    margin: 0;
-  }
-  nav .container {
-    width: 500px;
-  }
-  #main {
-    width: 600px;
-  }
-  #main article {
-    padding: 0;
-  }
-  #main article header h1 {
-    font-size: 1.0em;
+  header.logo #gears {
+    left: -80px;
   }
 }
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
   /* Styles */
-  header #description {
-    width: 250px;
+  .container {
+    width: 660px;
+    margin-left: 220px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 45px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  nav .container {
-    width: 500px;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 1000px;
-  }
-  .top-bar .container a#last {
-    margin-top: 25px;
-    margin-left: 175px;
-  }
-  .top-bar .container .goldgear {
-    display: block;
-  }
-  #main {
-    width: 900px;
-  }
-  #main article {
-    padding: 120px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
-  #main article header h1 {
-    font-size: 1.2em;
+  header.logo #gears {
+    left: -180px;
   }
 }
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */
-  header #description {
-    width: 250px;
+  .container {
+    width: 660px;
+    margin-left: 220px;
   }
-  header #description:before {
-    display: inline-block;
+  header.logo h1 {
+    font-size: 45px;
   }
-  header #description:after {
-    display: inline-block;
-  }
-  nav .container {
-    width: 500px;
-  }
-  .top-bar {
-    height: auto;
-  }
-  .top-bar .container {
-    width: 1000px;
-  }
-  .top-bar .container a#last {
-    margin-top: 25px;
-    margin-left: 175px;
-  }
-  .top-bar .container .goldgear {
-    display: block;
-  }
-  #main {
-    width: 900px;
-  }
-  #main article {
-    padding: 120px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-  }
-  #main article header h1 {
-    font-size: 1.2em;
+  header.logo #gears {
+    left: -180px;
   }
 }
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */
+  .container {
+    width: 660px;
+    margin-left: 220px;
+  }
+  header.logo h1 {
+    font-size: 45px;
+  }
+  header.logo #gears {
+    left: -180px;
+  }
 }
