@@ -67,18 +67,19 @@ main = hakyll $ do
         route $ niceRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" postCtx
+            >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
 
-    match "thoughts/*" $ version "brief" $ do
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html" postCtx
-            >>= relativizeUrls
+    -- match "thoughts/*" $ version "brief" $ do
+    --     compile $ pandocCompiler
+    --         >>= loadAndApplyTemplate "templates/post.html" postCtx
+    --         >>= relativizeUrls
 
     create ["archive.html"] $ do
         route niceRoute
         compile $ do
-            posts <- recentFirst =<< loadAll ("thoughts/*" .&&. hasNoVersion)
+            posts <- recentFirst =<< loadAll "thoughts/*"
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archive"            `mappend`
@@ -93,7 +94,7 @@ main = hakyll $ do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll ("thoughts/*" .&&. hasVersion "brief")
+            posts <- recentFirst =<<  loadAllSnapshots "thoughts/*" "content"
             let indexCtx =
                     listField "posts" postCtx (return (take 5 posts)) `mappend`
                     constField "title" "Home"                         `mappend`

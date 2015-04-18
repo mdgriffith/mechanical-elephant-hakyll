@@ -5,7 +5,6 @@ Date: 2014-3-22 12:20
 Category: Design
 Tags: process
 Slug: hard-work-and-honest-thievery
-URL: /thoughts/draft/hardwork
 Author: Matthew Griffith
 Summary: How this website was made.
 ---

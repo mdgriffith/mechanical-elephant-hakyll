@@ -4,8 +4,6 @@ Subtitle: or my experience picking up Haskell as a Python Programmer
 Date: 2015-4-15 12:20
 Category: Coding
 Tags: programming, haskell, 
-Slug: from-python-to-haskell-intro
-URL: /thoughts/2015-04-15-python-to-haskell-intro/
 Author: Matthew Griffith
 Summary: My experience picking up Haskell as a Python Programmer
 ---
