@@ -41,8 +41,8 @@ main = hakyll $ do
     match "pages/about.markdown" $ do
         route   $ baseRouteHTML 
         let aboutCtx =
-                    constField "nav-selection-about" "true"        `mappend`
-                    defaultContext
+                constField "nav-selection-about" "true"        `mappend`
+                defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
@@ -71,11 +71,6 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
 
-    -- match "thoughts/*" $ version "brief" $ do
-    --     compile $ pandocCompiler
-    --         >>= loadAndApplyTemplate "templates/post.html" postCtx
-    --         >>= relativizeUrls
-
     create ["archive.html"] $ do
         route niceRoute
         compile $ do
@@ -85,7 +80,6 @@ main = hakyll $ do
                     constField "title" "Archive"            `mappend`
                     constField "nav-selection-archive" "true"        `mappend`
                     defaultContext
-
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
@@ -94,13 +88,12 @@ main = hakyll $ do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<<  loadAllSnapshots "thoughts/*" "content"
+            posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "content"
             let indexCtx =
-                    listField "posts" postCtx (return (take 5 posts)) `mappend`
+                    listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Home"                         `mappend`
                     constField "nav-selection-thoughts" "true"        `mappend`
                     defaultContext
-
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
                 >>= loadAndApplyTemplate "templates/base.html" indexCtx
