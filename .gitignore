@@ -16,3 +16,4 @@ cabal.sandbox.config
 *.hp
 _cache
 _site
+thoughts/draft/hidden/
