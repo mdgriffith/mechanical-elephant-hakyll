@@ -1,12 +1,14 @@
+---
 Title: Hard Work and Honest Thievery
 Subtitle: or a quick account of a design process
 Date: 2014-3-22 12:20
 Category: Design
 Tags: process
 Slug: hard-work-and-honest-thievery
+URL: /thoughts/draft/hardwork
 Author: Matthew Griffith
 Summary: How this website was made.
-
+---
 Designing this blog has been a bit of an adventure and I wanted to share it.
 
 Where to start?  
@@ -58,12 +60,13 @@ The subject of typography goes all the way down, but basically I wanted both a s
 Making things superbly readable is easy.  
 Basically, you do this to your CSS/LESS/SASS:
 
-<pre>.readable {
+````css
+.readable {
 		width:        700px;
 		line-height:  1.2em;
 		font-size:    18px;
-}</pre>
-
+}
+````
 
 ### And so...
 

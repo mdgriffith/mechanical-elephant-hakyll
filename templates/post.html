@@ -1,4 +1,12 @@
 <article>
+    $if(draft)$
+      <div class="notice draft">
+        <span class="title">Draft!</span>
+        This article is still a draft.  Sooooo......be gentle.
+      </div>
+    $else$
+    <div>not a draft</div>
+    $endif$
     <header>
       <a href="$URL$" >
         <div class="article-header">

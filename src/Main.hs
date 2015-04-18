@@ -53,6 +53,16 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
 
+    match "thoughts/draft/*" $ do
+        route $ niceRoute
+        let draftCtx =
+                constField "draft"   "true"     `mappend`
+                defaultContext
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html" draftCtx
+            >>= loadAndApplyTemplate "templates/base.html" draftCtx
+            >>= relativizeUrls
+
     match "thoughts/*" $ do
         route $ niceRoute
         compile $ pandocCompiler

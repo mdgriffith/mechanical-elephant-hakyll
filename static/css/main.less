@@ -375,6 +375,20 @@ footer {
 
 
 
+.notice {
+  &.draft {
+    background-color:lighten(@action, 20%);
+    padding:20px;
+    margin-left:-20px;
+    margin-right:-20px;
+    margin-bottom:45px;
+    box-sizing: content-box;
+    border: 2px solid @action;
+    .rounded(3px);
+  }
+}
+
+
 
 /* ==========================================================================
    Helper classes

@@ -510,6 +510,7 @@ th {
   padding: 20px;
   margin-left: -20px;
   margin-right: -20px;
+  margin-bottom: 25px;
   box-sizing: content-box;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -600,7 +601,7 @@ pre {
   color: #d76a6c;
 }
 .sourceCode .kw {
-  color: #d76a6c;
+  color: #ffffff;
 }
 .sourceCode .dt {
   color: #d76a6c;
@@ -909,6 +910,21 @@ footer {
   background-color: #EEEEEE;
   background-color: #DDD;
   z-index: 1;
+}
+.notice.draft {
+  background-color: #dbc395;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 45px;
+  box-sizing: content-box;
+  border: 2px solid #c19849;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  /* future proofing */
+  -khtml-border-radius: 3px;
+  /* for old Konqueror browsers */
 }
 /* ==========================================================================
    Helper classes

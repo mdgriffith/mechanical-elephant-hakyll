@@ -472,18 +472,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/thoughts\/draft\/From_Python_to_Haskell_Functors.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/thoughts\/draft\/From_Python_to_Haskell_Functors.md",
-		"outputAbbreviatedPath": "\/thoughts\/draft\/From_Python_to_Haskell_Functors.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/thoughts\/draft\/hardwork.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
@@ -1125,7 +1113,7 @@
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
-	"skippedItemsString": "node_modules, .hg, \/static\/js, .svn, _cache, \/templates, \/src, .git, \/dist, _logs, \/pages, logs, \/static\/font, \/mechanical-elephant, \/static\/images, log, \/posts, \/static\/img, \/_site, cache",
+	"skippedItemsString": "node_modules, .hg, \/static\/js, .svn, _cache, \/templates, \/src, .git, \/dist, _logs, \/pages, logs, \/static\/font, \/mechanical-elephant, \/static\/images, log, \/posts, \/thoughts, \/static\/img, \/_site, cache",
 	"slimAutoOutputPathEnabled": 1,
 	"slimAutoOutputPathFilenamePattern": "*.html",
 	"slimAutoOutputPathRelativePath": "",
