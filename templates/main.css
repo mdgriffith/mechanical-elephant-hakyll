@@ -671,12 +671,6 @@ hr {
 .container {
   width: 660px;
   margin-left: 220px;
-  transition: width 0.5s ease-in-out;
-  -moz-transition: width 0.5s ease-in-out;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: margin-left 0.5s ease-in-out;
-  -moz-transition: margin-left 0.5s ease-in-out;
-  -webkit-transition: margin-left 0.5s ease-in-out;
 }
 article {
   padding-top: 25px;
@@ -789,9 +783,6 @@ header.logo h1 {
   font-family: Lato;
   text-transform: uppercase;
   padding: 5px;
-  transition: font-size 0.5s ease-in-out;
-  -moz-transition: font-size 0.5s ease-in-out;
-  -webkit-transition: font-size 0.5s ease-in-out;
 }
 nav {
   display: inline-block;
@@ -839,9 +830,6 @@ nav a.nav-link.nav-selection:hover {
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
-  transition: left 0.5s ease-in-out;
-  -moz-transition: left 0.5s ease-in-out;
-  -webkit-transition: left 0.5s ease-in-out;
 }
 #gears svg {
   position: absolute;
@@ -1024,11 +1012,25 @@ footer {
 .clearfix {
   *zoom: 1;
 }
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+/* Make the responsive properties animated! */
+header.logo h1 {
+  transition: font-size 0.5s ease-in-out;
+  -moz-transition: font-size 0.5s ease-in-out;
+  -webkit-transition: font-size 0.5s ease-in-out;
+}
+.container {
+  transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+  -moz-transition: margin-left 0.5s ease-in-out;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+}
+#gears {
+  transition: left 0.5s ease-in-out;
+  -moz-transition: left 0.5s ease-in-out;
+  -webkit-transition: left 0.5s ease-in-out;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */
