@@ -747,6 +747,9 @@ article .article-header {
   transition: color 0.25s ease-in-out;
   -moz-transition: color 0.25s ease-in-out;
   -webkit-transition: color 0.25s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
 }
 #page header a:after {
   content: "{";
@@ -759,6 +762,9 @@ article .article-header {
   transition: color 0.25s ease-in-out;
   -moz-transition: color 0.25s ease-in-out;
   -webkit-transition: color 0.25s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
 }
 #page .subtitle {
   font-size: 22px;
@@ -1063,10 +1069,10 @@ header.logo h1 {
     font-size: 20px;
   }
   #page header a:before {
-    display: none;
+    opacity: 0;
   }
   #page header a:after {
-    display: none;
+    opacity: 0;
   }
 }
 /* Smartphones (landscape) ----------- */
@@ -1081,10 +1087,10 @@ header.logo h1 {
     font-size: 20px;
   }
   #page header a:before {
-    display: none;
+    opacity: 0;
   }
   #page header a:after {
-    display: none;
+    opacity: 0;
   }
 }
 /* Smartphones (portrait) ----------- */
@@ -1099,10 +1105,10 @@ header.logo h1 {
     font-size: 20px;
   }
   #page header a:before {
-    display: none;
+    opacity: 0;
   }
   #page header a:after {
-    display: none;
+    opacity: 0;
   }
 }
 /* iPads (portrait and landscape) ----------- */
@@ -1120,10 +1126,10 @@ header.logo h1 {
     left: -80px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 /* iPads (landscape) ----------- */
@@ -1141,10 +1147,10 @@ header.logo h1 {
     left: -80px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1161,10 +1167,10 @@ header.logo h1 {
     left: -80px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 /* iPads (portrait) ----------- */
@@ -1182,10 +1188,10 @@ header.logo h1 {
     left: -80px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 /* Desktops and laptops ----------- */
@@ -1202,10 +1208,10 @@ header.logo h1 {
     left: -180px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 /* Large screens ----------- */
@@ -1222,10 +1228,10 @@ header.logo h1 {
     left: -180px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
 /* iPhone 4 ----------- */
@@ -1242,9 +1248,9 @@ header.logo h1 {
     left: -180px;
   }
   #page header a:before {
-    display: block;
+    opacity: 1;
   }
   #page header a:after {
-    display: block;
+    opacity: 1;
   }
 }
