@@ -27,6 +27,17 @@ baseRouteHTML = customRoute base
 
 
 
+feedConfig :: FeedConfiguration
+feedConfig = FeedConfiguration
+    { feedTitle       = "Mechanical Elephant: Code, Design, Science"
+    , feedDescription = "Haskell, Python, and Design Process"
+    , feedAuthorName  = "Matthew Griffith"
+    , feedAuthorEmail = "matt@mechanical-elephant.com"
+    , feedRoot        = "http://mechanical-elepahnt.com"
+    }
+
+
+
 main :: IO ()
 main = hakyll $ do
 
@@ -70,6 +81,23 @@ main = hakyll $ do
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
+
+    create ["atom.xml"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend` bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "thoughts/*" "content"
+            renderAtom feedConfig feedCtx posts
+
+    create ["rss"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend` bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "thoughts/*" "content"
+            renderRss feedConfig feedCtx posts
+
 
     create ["archive.html"] $ do
         route niceRoute
