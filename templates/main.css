@@ -668,6 +668,26 @@ hr {
   border: none;
   background: #cccccc;
 }
+table {
+  margin-bottom: 45px;
+  border-bottom: solid 1px #cccccc;
+}
+table thead {
+  text-transform: uppercase;
+  border-bottom: solid 1px #cccccc;
+}
+table thead th {
+  border-width: 0;
+}
+table td,
+table th {
+  padding: 0 10px;
+  border-left: solid 1px #cccccc;
+  border-right: solid 1px #cccccc;
+}
+table .odd {
+  background-color: #eeeeee;
+}
 .container {
   width: 660px;
   margin-left: 220px;
