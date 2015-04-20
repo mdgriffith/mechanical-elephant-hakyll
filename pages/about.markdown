@@ -13,11 +13,7 @@ As a developer, I mostly work with Haskell, Python,
 and the whole kit and caboodle of the browser frontend. I've done a fair share of Java and PERL as well.
 
 As a designer, I love whitespace.  Probably a bit too much.  
-I mean, look at this site, it's everywhere.  It's disgusting.  
-
-As a writer, I still put two spaces after a period, 
-which my friend says I should stop.  I wait for two pauses 
-before responding to him when he does this.
+I mean, look at this site, it's everywhere.  It's disgusting.
 
 When I'm not coding, designing, or science-ing, 
 I'm usually rock climbing, reading, or cooking.
