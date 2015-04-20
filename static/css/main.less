@@ -32,15 +32,8 @@
 @import "mixins.less";
 @import "code.less";
 
-.readable() {
-  font-size:24px;
-}
-.header() {
-  font-size:38px;
-}
-.small() {
-  font-size:14px;
-}
+@font-size-normal:18px;
+@font-size-header:38px;
 
 
 
@@ -50,7 +43,6 @@
 body {
     font-family: Cardo, Georgia;
     -webkit-font-smoothing: antialiased;
-    .readable();
     position:relative;
     height:100%;
     width:100%;
@@ -58,7 +50,7 @@ body {
     background-color:@white;
     color:#333332;
     background-color:@light;
-    font-size:18px;
+    font-size:@font-size-normal;
 }
 ::selection {
   background: lighten(@action, 12%); /* Safari */
@@ -68,7 +60,7 @@ body {
 }
 h1 {
   color:@darkest;
-  font-size:38px;
+  font-size:@font-size-header;
   font-weight:normal;
   padding:0;
   margin:0;
@@ -265,7 +257,7 @@ nav {
     z-index: 30;
     margin:25px 0;
     display:block;
-    font-size:18px;
+    font-size:@font-size-normal;
     color:@action;
     font-family: Cardo;
     text-transform: capitalize;
