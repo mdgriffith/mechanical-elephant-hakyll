@@ -1,4 +1,7 @@
-
+---
+title: About
+description:  The Style Guide for Mechanical Elephant.com
+---
 
 
 

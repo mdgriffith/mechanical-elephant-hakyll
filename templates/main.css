@@ -978,6 +978,25 @@ footer {
   unicode-bidi: bidi-override;
   direction: rtl;
 }
+.button {
+  background-color: #cccccc;
+  border: 1px solid #eeeeee;
+  padding: 2px 7px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  /* future proofing */
+  -khtml-border-radius: 3px;
+  /* for old Konqueror browsers */
+}
+.button:hover {
+  background-color: #aaaaaa;
+}
+#mc_embed_signup {
+  margin-bottom: 30px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -4,7 +4,7 @@ subtitle: coming from Python
 date: 2015-4-19 12:20
 category: Coding
 author: Matthew Griffith
-summary: My thoughts on choosing a language to create prototypes.
+description: How I became productive in Haskell
 ---
 <div>By <a href="/about">Matthew Griffith</a></div>
 
@@ -61,9 +61,9 @@ That being said,  I would say ignore the lens library in the beginning, as it ha
 # A Whole New Vocabulary.
 There are a lot of completely new words to learn when you learn Haskell.  Things like *Functor* and *Monad*.
 
-These words are going to feel 'heavier' to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race car tracks, , uhh....cereal. 
+These words are going to feel _heavier_ to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race car tracks, , uhh....cereal. 
 
-We store memories by attaching them to previously made memories, so there is going to be a tendency for your brain to just shut off if too many of these new, heavy words show up in a sentence or paragraph.  I had no associations with the word 'Functor', so it was hard to store.
+We store memories by attaching them to previously made memories, so there is going to be a tendency for your brain to just shut off if too many of these new, heavy words show up in a sentence or paragraph.  I had no associations with the word _Functor_, so it was hard to store.
 
 My strategy in learning these words was to come up with my own name that made sense to me and mentally substitute it every time that heavy word came up.  After a while, these made up synonyms anchored me and I had no problem with the 'heavy word'.
 
@@ -76,7 +76,7 @@ map (+1) [1,2,3,4]
 -- results in [2,3,4,5]
 ```
 
-So, I started calling it 'Mappable'.  Mappable was easy for me to remember and was descriptive of what it did.  A list is a Functor.  A list is Mappable.  
+So, I started calling it _Mappable_.  Mappable was easy for me to remember and was descriptive of what it did.  A list is a Functor.  A list is Mappable.  
 
 # My Trusty Print Statement
 
@@ -140,7 +140,7 @@ Then!
 4. __Find incremental ways to add to it.__  Design a file format for sudoku puzzles and write a Parsec parser for it!  Don't have the file format be JSON, make something up.
 
 
-Good luck on your journey!
+Good luck!
 
 
 

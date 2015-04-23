@@ -2,8 +2,8 @@
 title: About
 ---
 <div class="boxed drop-first" >
-Matthew Griffith is a full stack developer, designer, and musician.  <br />
-He currently works at Evotec as a data scientist.
+Matthew Griffith is a full stack developer, designer, and musician.  <br /><br />
+
 </div>
 
 <span class="run-in">I'm fascinated by </span> using technology 
@@ -19,7 +19,8 @@ When I'm not coding, designing, or science-ing,
 I'm usually rock climbing, reading, or cooking.
 Chemistry you can eat!
 
-The source code to this site is on github at [https://github.com/mdgriffith/mechanical-elephant](https://github.com/mdgriffith/mechanical-elephant).  This site is created in Haskell using the Hakyll static site generator. 
+This site is created in Haskell using the Hakyll static site generator. 
+The source code is on github at [https://github.com/mdgriffith/mechanical-elephant](https://github.com/mdgriffith/mechanical-elephant).  
 
 You can reach me at <span class="encode">moc.tnahpele-lacinahcem@ttam</span>.
 
