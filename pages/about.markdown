@@ -21,4 +21,5 @@ Chemistry you can eat!
 
 The source code to this site is on github at [https://github.com/mdgriffith/mechanical-elephant](https://github.com/mdgriffith/mechanical-elephant).  This site is created in Haskell using the Hakyll static site generator. 
 
+You can reach me at <span class="encode">moc.tnahpele-lacinahcem@ttam</span>.
 

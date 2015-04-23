@@ -974,6 +974,10 @@ footer {
   -khtml-border-radius: 3px;
   /* for old Konqueror browsers */
 }
+.encode {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

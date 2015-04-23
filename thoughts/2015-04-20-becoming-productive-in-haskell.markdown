@@ -6,6 +6,7 @@ category: Coding
 author: Matthew Griffith
 summary: My thoughts on choosing a language to create prototypes.
 ---
+<div>By <a href="/about">Matthew Griffith</a></div>
 
 <p class="drop-first"><span class="run-in">Sometime recently</span> I found that I had become proficient enough in Haskell to be productive and I wanted to capture some of my thoughts on the learning experience before it got too far away.  I do most of my web prototyping in Haskell now, though I still regularly use and enjoy Python.
 </p>
