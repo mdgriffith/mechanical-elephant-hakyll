@@ -17,5 +17,8 @@ I mean, look at this site, it's everywhere.  It's disgusting.
 
 When I'm not coding, designing, or science-ing, 
 I'm usually rock climbing, reading, or cooking.
-Chemistry you can eat!  You're even supposed to...
+Chemistry you can eat!
+
+The source code to this site is on github at [https://github.com/mdgriffith/mechanical-elephant](https://github.com/mdgriffith/mechanical-elephant).  This site is created in Haskell using the Hakyll static site generator. 
+
 
