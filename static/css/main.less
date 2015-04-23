@@ -119,8 +119,9 @@ table {
   margin-left: 220px;
 }
 
-article {
+#page article {
     padding-top:25px;
+    padding-bottom:35px;
     h1 {
       font-size:1.6em;
     }
@@ -130,6 +131,27 @@ article {
     .article-header {
       padding-top:10px;
       padding-bottom:10px;
+    }
+
+    &.archive {
+      a {
+        text-align:left;
+      }
+      header {
+        margin: 0;
+
+      }
+    }
+    &:last-of-type {
+      .break {
+        display:none;
+      }
+    }
+    .article-end {
+      text-align:center;
+      color:@grey;
+      font-size:40px;
+
     }
 }
 
@@ -157,6 +179,7 @@ article {
           color:@darkest;
           h1 {
             color:@darkest;
+            margin-top:0;
           }
           &:hover {
             &:before{
@@ -165,8 +188,12 @@ article {
             &:after{
               color:@action;
             }
+            .subtitle {
+              color:@action;
+            }
           }
           &:before{
+            display:none;
             content:"}";
             color:#CCC;
             position:absolute;
@@ -182,6 +209,7 @@ article {
             -webkit-transition: opacity 0.5s ease-in-out;
           }
           &:after{
+            display:none;
             content:"{";
             color:#CCC;
             float:left;
@@ -203,8 +231,11 @@ article {
       font-size:22px;
       color:#838994;
     }
+    h1 {
+      margin-top:60px;
+    }
     p {
-        margin-bottom:35px;
+        margin-bottom:25px;
         margin-top:10px;
         line-height:1.6;
         a {

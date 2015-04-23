@@ -690,18 +690,33 @@ table .odd {
   width: 660px;
   margin-left: 220px;
 }
-article {
+#page article {
   padding-top: 25px;
+  padding-bottom: 35px;
 }
-article h1 {
+#page article h1 {
   font-size: 1.6em;
 }
-article header h1 {
+#page article header h1 {
   font-size: 2em;
 }
-article .article-header {
+#page article .article-header {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+#page article.archive a {
+  text-align: left;
+}
+#page article.archive header {
+  margin: 0;
+}
+#page article:last-of-type .break {
+  display: none;
+}
+#page article .article-end {
+  text-align: center;
+  color: #cccccc;
+  font-size: 40px;
 }
 #page {
   height: 100%;
@@ -728,6 +743,7 @@ article .article-header {
 }
 #page header a h1 {
   color: #111111;
+  margin-top: 0;
 }
 #page header a:hover:before {
   color: #c19849;
@@ -735,7 +751,11 @@ article .article-header {
 #page header a:hover:after {
   color: #c19849;
 }
+#page header a:hover .subtitle {
+  color: #c19849;
+}
 #page header a:before {
+  display: none;
   content: "}";
   color: #CCC;
   position: absolute;
@@ -750,6 +770,7 @@ article .article-header {
   -webkit-transition: opacity 0.5s ease-in-out;
 }
 #page header a:after {
+  display: none;
   content: "{";
   color: #CCC;
   float: left;
@@ -768,8 +789,11 @@ article .article-header {
   font-size: 22px;
   color: #838994;
 }
+#page h1 {
+  margin-top: 60px;
+}
 #page p {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   margin-top: 10px;
   line-height: 1.6;
 }
