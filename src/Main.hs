@@ -37,6 +37,7 @@ feedConfig = FeedConfiguration
     }
 
 
+mainDescription = "Programming in haskell, creativity, and the design process."
 
 main :: IO ()
 main = hakyll $ do
@@ -54,7 +55,7 @@ main = hakyll $ do
         let aboutCtx =
                 constField "title" "About Mechanical Elephant" `mappend`
                 constField "nav-selection-about" "true"        `mappend`
-                constField "description" "Programming in haskell, creativity, and the design process." `mappend`
+                constField "description" mainDescription       `mappend`
                 defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
@@ -106,10 +107,10 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "thoughts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archive"            `mappend`
-                    constField "nav-selection-archive" "true"        `mappend`
-                    constField "description" "Programming in haskell, creativity, and the design process." `mappend`
+                    listField "posts" postCtx (return posts)  `mappend`
+                    constField "title" "Archive"              `mappend`
+                    constField "nav-selection-archive" "true" `mappend`
+                    constField "description" mainDescription  `mappend`
                     defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
@@ -121,10 +122,10 @@ main = hakyll $ do
         compile $ do
             posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "content"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Mechanical Elephant" `mappend`
-                    constField "nav-selection-thoughts" "true"        `mappend`
-                    constField "description" "Programming in haskell, creativity, and the design process." `mappend`
+                    listField "posts" postCtx (return posts)   `mappend`
+                    constField "title" "Mechanical Elephant"   `mappend`
+                    constField "nav-selection-thoughts" "true" `mappend`
+                    constField "description" mainDescription   `mappend`
                     defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
