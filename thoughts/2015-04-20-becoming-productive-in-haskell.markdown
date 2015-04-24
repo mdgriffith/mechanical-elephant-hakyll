@@ -52,7 +52,7 @@ In the beginning though, you kinda have to have faith that yes, people do read i
 
 
 # Infix Symbols and Noise
-I also wanted to mention something about the infix symbols that are common in Haskell code too(\$,<\$>,<-,->,etc.), as they can create a sort of symbol induced despair/anger in newcomers.  
+I also wanted to mention something about the infix symbols that are common in Haskell code too (\$,<\$>,<-,->,etc.), as they can create a sort of symbol induced despair/anger in newcomers.  
 
 Don't despair!  I know they reek of deceptive cleverness, but there are only a limited number of common ones and once you know them you'll see they're useful and simple.  I think there are maybe 5 infix symbols that I use on a regular basis.
 
@@ -61,7 +61,7 @@ That being said,  I would say ignore the lens library in the beginning, as it ha
 # A Whole New Vocabulary.
 There are a lot of completely new words to learn when you learn Haskell.  Things like *Functor* and *Monad*.
 
-These words are going to feel _heavier_ to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race car tracks, , uhh....cereal. 
+These words are going to feel _heavier_ to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race tracks, roller coasters, uhh....cereal. 
 
 We store memories by attaching them to previously made memories, so there is going to be a tendency for your brain to just shut off if too many of these new, heavy words show up in a sentence or paragraph.  I had no associations with the word _Functor_, so it was hard to store.
 
@@ -99,11 +99,11 @@ So, I had some extra time, I thought maybe I should give it a go in Haskell.
 
 I found the Youtube video, [Parsing Stuff in Haskell](https://www.youtube.com/watch?v=r_Enynu_TV0), which explains how to create a JSON parser in Haskell using the Parsec library.
 
-But it also inadvertently showed me how to use Monads and Applicatives as tools to create something I needed. It showed me how they function(har, har) and how they are related to each other.
+But it also inadvertently showed me how to use Monads and Applicatives as tools to create something I needed. It showed me how they function (har, har) and how they are related to each other.
 
 After writing a parser with them, I began to understand other code that used them.  I then started to understand the abstract nature of them...but that abstractness was a lesson for another day, not for starting out.
 
-Also, Parsec provided enough structure that my inexperience in writing parsers did not really matter.  In fact, as someone just learning Haskell, I was able to write a parser that was better in every measure(lower complexity, speed, readability, extensibility), compared to what I could do as a programmer who has worked with Python for years, but with no expertise in parsers.
+Also, Parsec provided enough structure that my inexperience in writing parsers did not really matter.  In fact, as someone just learning Haskell, I was able to write a parser that was better in every measure (lower complexity, faster speed, better readability, easier extensibility), compared to what I could do as a programmer who has worked with Python for years, but with no expertise in parsers.
 
 
 # The learning process was incredibly rewarding
@@ -119,7 +119,7 @@ Well, reason 0 is I have the opportunity to choose what technology I use.  I kno
 5. Excellent libraries.  I feel that the basic guarantees of the Haskell language make the standard quality of libraries exceptionally high.  Then there are libraries that were game-changers for me (Parsec and QuickCheck immediately come to mind, but there are others.)
 6. [A helpful community](https://gist.github.com/quchen/5280339)
 7. Easy to scale code up to using many cores.
-8. Haskell infrastructure is improving all the time.  Last year, GHC(which is the Haskell compiler) 7.8 came out which [doubled the performance of Warp](http://www.yesodweb.com/blog/2014/02/new-warp), one of the prominent web servers that was already pretty fast.
+8. Haskell infrastructure is improving all the time.  Last year, GHC (which is the Haskell compiler) 7.8 came out which [doubled the performance of Warp](http://www.yesodweb.com/blog/2014/02/new-warp), one of the prominent web servers that was already pretty fast.
 
 And finally, I have to say that writing Haskell code comes with a deep level of satisfaction.  It's more rewarding than most any coding experience I've had.
 
@@ -130,11 +130,11 @@ It can be tough to find a good starting point.
 
 Here's how I would do it if I had to learn Haskell again.
 
-First, reading through Chapter 8 in [Learn you a Haskell for Great Good](http://learnyouahaskell.com/chapters).
+First, reading at least Chapters 1 through 8 in [Learn you a Haskell for Great Good](http://learnyouahaskell.com/chapters).
 
 Then!
 
-1. __Write a small module that doesn't worry about IO.__  Something like a Sudoku module that generates Sudoku puzzles.  Don't worry about using a random number as a seed.  Use Debug.Trace as your print statement to see what's going on.  Generate a puzzle and Debug.Trace it to the screen.  Create your own data types, and just use functions(i.e. no custom typeclasses).
+1. __Write a small module that doesn't worry about IO.__  Something like a Sudoku module that generates Sudoku puzzles.  Don't worry about using a random number as a seed.  Use Debug.Trace as your print statement to see what's going on.  Generate a puzzle and Debug.Trace it to the screen.  Create your own data types, and just use functions (i.e. no custom typeclasses).
 2. __Turn that into a Website__ using either [Scotty](http://adit.io/posts/2013-04-15-making-a-website-with-haskell.html) or [Spock](http://www.spock.li/tutorial/).  Keep it simple;  a URL that shows a sudoku puzzle.  Then, a URL that [produces JSON](https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json) of a sudoku puzzle.
 3. __Mess around with real IO.__  Try printing the puzzle to the terminal without Debug.Trace.
 4. __Find incremental ways to add to it.__  Design a file format for sudoku puzzles and write a Parsec parser for it!  Don't have the file format be JSON, make something up.
