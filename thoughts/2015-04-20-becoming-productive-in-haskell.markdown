@@ -12,9 +12,9 @@ description: How I became productive in Haskell
 </p>
 
 # Data First
-This is more of a thought on moving from a dynamic language to a static language, but in Haskell, the structure of your data is mostly stated in data declarations and type signatures. In python it's mostly implied by the code.  
+This is more of a thought on moving from a dynamic language to a static language, but in Haskell, the structure of your data is mostly stated in data declarations and type signatures. In Python it's mostly implied by the code.  
 
-My first thought with a Haskell function is "What does the data look like?  This function takes a \____ and returns a \_____ ?", while in python my first thought is "What does the code say?". 
+My first thought with a Haskell function is "What does the data look like?  This function takes a \____ and returns a \_____ ?", while in Python my first thought is "What does the code say?" 
 
 Thinking 'data first' improved my coding, even when coming back to Python.  I more often recognize when the structure of my data changes for no real reason other than it was easy and I was very 'zoomed in' on the problem at the time.  
 
