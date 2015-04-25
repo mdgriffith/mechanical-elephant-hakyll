@@ -1,9 +1,19 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid            (mappend)
+-- import           Data.Monoid            (mappend)
+-- import           Hakyll
+-- import           System.FilePath.Posix  (takeBaseName, takeDirectory
+--                                         , (</>), replaceDirectory )
+
+
+import           Control.Monad          (forM,forM_)
+import           Data.List              (sortBy,isInfixOf)
+import           Data.Monoid            ((<>),mconcat, mappend)
+import           Data.Ord               (comparing)
 import           Hakyll
-import           System.FilePath.Posix  (takeBaseName, takeDirectory
-                                        , (</>), replaceDirectory )
+import           System.Locale          (defaultTimeLocale)
+import           System.FilePath.Posix  (takeBaseName,takeDirectory
+                                         ,(</>),splitFileName, replaceDirectory )
 
 --------------------------------------------------------------------------------
 
@@ -25,6 +35,17 @@ baseRouteHTML = customRoute base
   where
     base ident = takeDirectory (replaceDirectory (toFilePath ident) "") </> takeBaseName (toFilePath ident) </> "index.html"
 
+
+
+-- replace url of the form foo/bar/index.html by foo/bar
+removeIndexHtml :: Item String -> Compiler (Item String)
+removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
+  where
+    removeIndexStr :: String -> String
+    removeIndexStr url = case splitFileName url of
+        (dir, "index.html") | isLocal dir -> dir
+        _                                 -> url
+    isLocal uri = not (isInfixOf "://" uri)
 
 
 feedConfig :: FeedConfiguration
@@ -60,12 +81,14 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
+            >>= removeIndexHtml
 
     match "pages/styleguide.markdown" $ do
         route   $ baseRouteHTML 
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
+            >>= removeIndexHtml
 
     match "thoughts/draft/*" $ do
         route $ niceRoute
@@ -76,6 +99,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/post.html" draftCtx
             >>= loadAndApplyTemplate "templates/base.html" draftCtx
             >>= relativizeUrls
+            >>= removeIndexHtml
 
     match "thoughts/*" $ do
         route $ niceRoute
@@ -84,6 +108,7 @@ main = hakyll $ do
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
+            >>= removeIndexHtml
 
     create ["atom.xml"] $ do
         route idRoute
@@ -116,6 +141,7 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
                 >>= relativizeUrls
+                >>= removeIndexHtml
 
     create ["index.html"] $ do
         route idRoute
@@ -131,6 +157,7 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
                 >>= loadAndApplyTemplate "templates/base.html" indexCtx
                 >>= relativizeUrls
+                >>= removeIndexHtml
 
     match "templates/*" $ compile templateCompiler
 
