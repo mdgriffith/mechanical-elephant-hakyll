@@ -868,6 +868,16 @@ nav a.nav-link.nav-selection {
 nav a.nav-link.nav-selection:hover {
   border-bottom-color: #111111;
 }
+nav a.nav-link.other {
+  color: #cccccc;
+}
+nav a.nav-link.other .btn {
+  background-color: transparent !important;
+}
+nav .twitter-share-button {
+  position: relative;
+  top: 3px;
+}
 #gears {
   display: block;
   position: absolute;

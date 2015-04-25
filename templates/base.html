@@ -47,6 +47,12 @@
                 $else$
                     <a class="nav-link" href="/about">About</a>
                 $endif$
+                <a class="nav-link other" href="/rss">RSS</a>
+                <a class="nav-link other" href="/atom.xml">Atom</a>
+                <!-- <a class="nav-link other" href="http://twitter.com/share?url=$url$&text=$title$%20http%3A%2F%2Fmechanical-elephant.com$url$%20via%20@mech_elephant" target="_blank">Tweet</a> -->
+
+                <a href="https://twitter.com/share" class="nav-link other twitter-share-button" data-via="mech_elephant">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </nav>
             $partial("templates/break.svg")$
         </header>
@@ -93,7 +99,6 @@
 
             <div class="copyright">copyright Matthew Griffith 2015</div>
         </footer>
-
         <!-- Piwik -->
         <script type="text/javascript">
           var _paq = _paq || [];
