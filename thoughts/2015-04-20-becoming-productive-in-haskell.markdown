@@ -6,13 +6,15 @@ category: Coding
 author: Matthew Griffith
 description: How I became productive in Haskell
 ---
-<div>By <a href="/about">Matthew Griffith</a></div>
 
 <p class="drop-first"><span class="run-in">Sometime recently</span> I became proficient enough in Haskell to be productive, and I wanted to capture some of my thoughts on the learning experience before it got too far away.  I do most of my web prototyping in Haskell now, though I still regularly use and enjoy Python.
 </p>
 
 # Data First
 This is more of a thought on moving from a dynamic language to a static language, but in Haskell the structure of your data is mostly stated in data declarations and type signatures. In Python it's mostly implied by the code.  
+
+<!--more-->
+
 
 My first thought with a Haskell function is "What does the data look like?  This function takes a \____ and returns a \_____ ?", while in Python my first thought is "What does the code say?" 
 

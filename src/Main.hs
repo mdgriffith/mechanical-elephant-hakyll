@@ -54,10 +54,10 @@ feedConfig = FeedConfiguration
     , feedDescription = "Haskell, Python, and Design Process"
     , feedAuthorName  = "Matthew Griffith"
     , feedAuthorEmail = "matt@mechanical-elephant.com"
-    , feedRoot        = "http://mechanical-elepahnt.com"
+    , feedRoot        = "http://mechanical-elephant.com"
     }
 
-
+mainDescription :: String
 mainDescription = "Programming in haskell, creativity, and the design process."
 
 main :: IO ()
@@ -104,18 +104,20 @@ main = hakyll $ do
     match "thoughts/*" $ do
         route $ niceRoute
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/post.html" postCtx
+            >>= saveSnapshot "rendered"
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
             >>= removeIndexHtml
+            
 
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
             let feedCtx = postCtx `mappend` bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
-                loadAllSnapshots "thoughts/*" "content"
+                loadAllSnapshots "thoughts/*" "rendered"
             renderAtom feedConfig feedCtx posts
 
     create ["rss"] $ do
@@ -123,8 +125,9 @@ main = hakyll $ do
         compile $ do
             let feedCtx = postCtx `mappend` bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
-                loadAllSnapshots "thoughts/*" "content"
+                loadAllSnapshots "thoughts/*" "rendered"
             renderRss feedConfig feedCtx posts
+
 
 
     create ["archive.html"] $ do
@@ -146,12 +149,13 @@ main = hakyll $ do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "content"
+            posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "rendered"
             let indexCtx =
-                    listField "posts" postCtx (return posts)   `mappend`
+                    listField "posts" teaserCtx (return posts)   `mappend`
                     constField "title" "Mechanical Elephant"   `mappend`
                     constField "nav-selection-thoughts" "true" `mappend`
                     constField "description" mainDescription   `mappend`
+
                     defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
@@ -167,3 +171,6 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+teaserCtx :: Context String
+teaserCtx = teaserField "teaser" "content" `mappend` postCtx

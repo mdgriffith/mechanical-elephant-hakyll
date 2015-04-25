@@ -24,4 +24,4 @@ The source code is on github at [https://github.com/mdgriffith/mechanical-elepha
 
 You can reach me at <span class="encode">moc.tnahpele-lacinahcem@ttam</span>.
 
-On twitter, I'm <a href="https://twitter.com/mech_elephant">@mech_elephant</a>
+<!-- On twitter, I'm <a href="https://twitter.com/mech_elephant">@mech_elephant</a> -->

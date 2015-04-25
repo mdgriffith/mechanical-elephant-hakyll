@@ -989,8 +989,9 @@ footer {
   direction: rtl;
 }
 .button {
-  background-color: #cccccc;
-  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  color: #c19849;
+  border: 1px solid #cccccc;
   padding: 2px 7px;
   margin-top: 4px;
   margin-bottom: 6px;
@@ -1000,12 +1001,19 @@ footer {
   /* future proofing */
   -khtml-border-radius: 3px;
   /* for old Konqueror browsers */
+  transition: border-color 0.5s ease-in-out;
+  -moz-transition: border-color 0.5s ease-in-out;
+  -webkit-transition: border-color 0.5s ease-in-out;
 }
 .button:hover {
-  background-color: #aaaaaa;
+  border-color: #aaaaaa;
 }
 #mc_embed_signup {
   margin-bottom: 30px;
+}
+.post-date {
+  float: right;
+  color: #aaaaaa;
 }
 /* ==========================================================================
    Helper classes

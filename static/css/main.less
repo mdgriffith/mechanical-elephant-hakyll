@@ -465,18 +465,30 @@ footer {
 
 
 .button {
-  background-color:@grey;
-  border:1px solid @lighter;
+  background-color:@lighter;
+  color:@action;
+  border:1px solid @grey;
   padding:2px 7px;
   margin-top:4px;
   margin-bottom: 6px;
   .rounded(3px);
+
+  transition: border-color 0.5s ease-in-out;
+  -moz-transition: border-color 0.5s ease-in-out;
+  -webkit-transition: border-color 0.5s ease-in-out;
   &:hover {
-      background-color:@dark;
+      // background-color:@gray;
+      border-color:@dark;
   }
 }
 #mc_embed_signup {
   margin-bottom:30px;
+}
+
+.post-date {
+  float:right;
+  color:@dark;
+
 }
 
 
