@@ -1,5 +1,6 @@
 $for(posts)$
   $if(teaser)$
+    <article>
       <header>
         <a href="$url$" >
           <div class="article-header">
@@ -12,6 +13,7 @@ $for(posts)$
       <div>By <a href="/about">$author$</a></div>
       $teaser$
       <a href="$url$" class="button">Read more...</a>
+    </article>
   $else$
       $body$
   $endif$
