@@ -1,10 +1,5 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
--- import           Data.Monoid            (mappend)
--- import           Hakyll
--- import           System.FilePath.Posix  (takeBaseName, takeDirectory
---                                         , (</>), replaceDirectory )
-
 
 import           Control.Monad          (forM,forM_)
 import           Data.List              (sortBy,isInfixOf)

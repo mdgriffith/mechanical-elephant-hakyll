@@ -7,7 +7,7 @@ title: About
 Matthew Griffith is a full stack developer, designer, and musician.  <br /><br />
 </div>
 
-<img style="float:right;width:200px;height:auto;margin:0;margin-left:10px;" src="/static/img/portrait.jpg" />
+<img class="right" src="/static/img/portrait.jpg" />
 
 <span class="run-in">I'm fascinated by </span> using technology 
 to create. 
