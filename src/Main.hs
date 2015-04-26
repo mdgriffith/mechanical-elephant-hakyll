@@ -25,10 +25,11 @@ baseRoute = customRoute base
   where
     base ident = replaceDirectory (toFilePath ident) ""
 
-baseRouteHTML :: Routes
-baseRouteHTML = customRoute base
-  where
-    base ident = takeDirectory (replaceDirectory (toFilePath ident) "") </> takeBaseName (toFilePath ident) </> "index.html"
+
+niceBaseRoute :: Routes
+niceBaseRoute = customRoute base
+    where 
+      base ident = takeBaseName (toFilePath ident) </> "index.html"
 
 
 
@@ -67,19 +68,18 @@ main = hakyll $ do
         compile copyFileCompiler
 
     match "pages/about.markdown" $ do
-        route   $ baseRouteHTML 
-        let aboutCtx =
-                constField "title" "About Mechanical Elephant" `mappend`
-                constField "nav-selection-about" "true"        `mappend`
-                constField "description" mainDescription       `mappend`
-                defaultContext
+        route   $ niceBaseRoute
+        let aboutCtx = constField "title" "About Mechanical Elephant"
+                    <> constField "nav-selection-about" "true"       
+                    <> constField "description" mainDescription      
+                    <> defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
             >>= relativizeUrls
             >>= removeIndexHtml
 
     match "pages/styleguide.markdown" $ do
-        route   $ baseRouteHTML 
+        route   $ niceBaseRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
@@ -87,9 +87,8 @@ main = hakyll $ do
 
     match "thoughts/draft/*" $ do
         route $ niceRoute
-        let draftCtx =
-                constField "draft"   "true"     `mappend`
-                defaultContext
+        let draftCtx = constField "draft"   "true" 
+                    <> defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" draftCtx
             >>= loadAndApplyTemplate "templates/base.html" draftCtx
@@ -110,7 +109,7 @@ main = hakyll $ do
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
+            let feedCtx = postCtx <> bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
                 loadAllSnapshots "thoughts/*" "rendered"
             renderAtom feedConfig feedCtx posts
@@ -118,23 +117,31 @@ main = hakyll $ do
     create ["rss"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
+            let feedCtx = postCtx <> bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
                 loadAllSnapshots "thoughts/*" "rendered"
             renderRss feedConfig feedCtx posts
 
-
+    create ["sitemap.xml"] $ do
+        route idRoute
+        compile $ do
+            pages <- loadAll ("pages/about.markdown" .||. "thoughts/*")
+            let sitemapCtx = listField "pages" sitemapItemCtx (return pages) 
+                          <> defaultContext
+            makeItem "" 
+                >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
+                >>= removeIndexHtml
+                >>= relativizeUrls
 
     create ["archive.html"] $ do
         route niceRoute
         compile $ do
             posts <- recentFirst =<< loadAll "thoughts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts)  `mappend`
-                    constField "title" "Archive"              `mappend`
-                    constField "nav-selection-archive" "true" `mappend`
-                    constField "description" mainDescription  `mappend`
-                    defaultContext
+            let archiveCtx = listField "posts" postCtx (return posts)  
+                          <> constField "title" "Archive"              
+                          <> constField "nav-selection-archive" "true" 
+                          <> constField "description" mainDescription  
+                          <> defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
@@ -145,13 +152,11 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "rendered"
-            let indexCtx =
-                    listField "posts" teaserCtx (return posts)   `mappend`
-                    constField "title" "Mechanical Elephant"   `mappend`
-                    constField "nav-selection-thoughts" "true" `mappend`
-                    constField "description" mainDescription   `mappend`
-
-                    defaultContext
+            let indexCtx = listField "posts" teaserCtx (return posts)   
+                        <> constField "title" "Mechanical Elephant"   
+                        <> constField "nav-selection-thoughts" "true" 
+                        <> constField "description" mainDescription   
+                        <> defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
                 >>= loadAndApplyTemplate "templates/base.html" indexCtx
@@ -169,3 +174,10 @@ postCtx =
 
 teaserCtx :: Context String
 teaserCtx = teaserField "teaser" "content" `mappend` postCtx
+
+
+sitemapItemCtx :: Context String
+sitemapItemCtx = mconcat [ constField "root" (feedRoot feedConfig)
+                         , dateField "isodate" "%F"
+                         , defaultContext
+                         ]

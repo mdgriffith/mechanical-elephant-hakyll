@@ -1,7 +1,7 @@
 ---
 title: About
+date: 2015-04-20
 ---
-
 
 <div class="boxed drop-first" >
 Matthew Griffith is a full stack developer, designer, and musician.  <br /><br />
