@@ -54,7 +54,9 @@ In the beginning, though, you kinda have to have faith that, yes, people do read
 
 
 # Infix Symbols and Noise
-I also wanted to mention something about the infix symbols that are common in Haskell code too (\$,<\$>,<-,->,etc.), as they can create a sort of symbol induced despair/anger in newcomers.  
+I also wanted to mention something about the infix functions that are common in Haskell code too.  Infix functions/operators are functions that go _between_ two arguments instead of _before_.  The classic example is __+__ for addition.
+
+In Haskell, we have a few infix symbols that are used regularly: \$, <\$>, <-, ->, etc. and they can create a sort of symbol induced despair/anger in newcomers.  
 
 Don't despair!  I know they reek of deceptive cleverness, but there are only a limited number of common ones. Once you know them you'll see they're useful and simple.  I think there are maybe 5 infix symbols that I use on a regular basis.
 
