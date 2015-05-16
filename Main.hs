@@ -1,12 +1,9 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 
-import           Control.Monad          (forM,forM_)
-import           Data.List              (sortBy,isInfixOf)
+import           Data.List              (isInfixOf)
 import           Data.Monoid            ((<>),mconcat, mappend)
-import           Data.Ord               (comparing)
 import           Hakyll
-import           System.Locale          (defaultTimeLocale)
 import           System.FilePath.Posix  (takeBaseName,takeDirectory
                                          ,(</>),splitFileName, replaceDirectory )
 
@@ -97,7 +94,7 @@ main = hakyll $ do
 
     match "thoughts/*" $ do
         route $ niceRoute
-        compile $ pandocCompiler
+        compile $ pandocCompiler 
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= saveSnapshot "rendered"
