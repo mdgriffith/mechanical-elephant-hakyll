@@ -4,7 +4,8 @@ date: 2015-04-20
 ---
 
 <div class="boxed drop-first" >
-Matthew Griffith is a full stack developer, designer, and musician.  <br /><br />
+Matthew Griffith is a full stack developer, designer, and musician.  <br />
+He currently works as an Informatics Scientist at Evotec.
 </div>
 
 <img class="right" src="/static/img/portrait.jpg" />
