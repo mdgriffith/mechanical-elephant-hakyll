@@ -119,7 +119,7 @@ Well, reason 0 is I have the opportunity to choose what technology I use.  I kno
 2. I don't have to waste my time on trivial bugs.
 3. The bugs I do encounter are generally more meaningful and lead me to understanding the problem more.  Note: meaningful doesn't always mean harder.
 3. Python taught me not to worry about speed that much.  Haskell agreed with that but let me have it anyway.
-4. Refactoring is a *breeze*.  In Python, I always had a nagging feeling that I forgot to change some small part of your code that will be important later.  
+4. Refactoring is a *breeze*.  In Python, I always had a nagging feeling that I forgot to change some small part of your code that would be important later. 
 5. Excellent libraries.  I feel that the basic guarantees of the Haskell language make the standard quality of libraries exceptionally high.  Then there are libraries that were game-changers for me (Parsec and QuickCheck immediately come to mind, but there are others).
 6. [A helpful community](https://gist.github.com/quchen/5280339).
 7. Easy to scale up code to using many cores.
@@ -145,6 +145,11 @@ Then!
 
 
 Good luck!
+
+This article has been <a href="http://postd.cc/becoming-productive-in-haskell/">translated into Japanese.</a>
+
+And has a <a href="https://www.reddit.com/r/haskell/comments/33mnlc/becoming_productive_in_haskell_coming_from_python/">healthy discussion on reddit.</a>
+
 
 
 

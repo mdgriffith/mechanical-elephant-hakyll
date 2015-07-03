@@ -24,7 +24,7 @@ I'm usually rock climbing, reading, or cooking.
 Chemistry you can eat!
 
 This site is created in Haskell using the Hakyll static site generator. 
-The source code is on github at [https://github.com/mdgriffith/mechanical-elephant](https://github.com/mdgriffith/mechanical-elephant).  
+The source code is on [github](https://github.com/mdgriffith/mechanical-elephant).  
 
 You can reach me at <span class="encode">moc.tnahpele-lacinahcem@ttam</span>.
 
