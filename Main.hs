@@ -25,7 +25,7 @@ baseRoute = customRoute base
 
 niceBaseRoute :: Routes
 niceBaseRoute = customRoute base
-    where 
+    where
       base ident = takeBaseName (toFilePath ident) </> "index.html"
 
 
@@ -38,7 +38,7 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
     removeIndexStr url = case splitFileName url of
         (dir, "index.html") | isLocal dir -> dir
         _                                 -> url
-    isLocal uri = not (isInfixOf "://" uri)
+    isLocal uri = not ("://" `isInfixOf` uri) 
 
 
 feedConfig :: FeedConfiguration
@@ -65,10 +65,10 @@ main = hakyll $ do
         compile copyFileCompiler
 
     match "pages/about.markdown" $ do
-        route   $ niceBaseRoute
+        route niceBaseRoute
         let aboutCtx = constField "title" "About Mechanical Elephant"
-                    <> constField "nav-selection-about" "true"       
-                    <> constField "description" mainDescription      
+                    <> constField "nav-selection-about" "true"
+                    <> constField "description" mainDescription
                     <> defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" aboutCtx
@@ -76,15 +76,15 @@ main = hakyll $ do
             >>= removeIndexHtml
 
     match "pages/styleguide.markdown" $ do
-        route   $ niceBaseRoute
+        route niceBaseRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
             >>= relativizeUrls
             >>= removeIndexHtml
 
     match "thoughts/draft/*" $ do
-        route $ niceRoute
-        let draftCtx = constField "draft"   "true" 
+        route niceRoute
+        let draftCtx = constField "draft"   "true"
                     <> defaultContext
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html" draftCtx
@@ -93,15 +93,15 @@ main = hakyll $ do
             >>= removeIndexHtml
 
     match "thoughts/*" $ do
-        route $ niceRoute
-        compile $ pandocCompiler 
+        route niceRoute
+        compile $ pandocCompiler
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= saveSnapshot "rendered"
             >>= loadAndApplyTemplate "templates/base.html" postCtx
             >>= relativizeUrls
             >>= removeIndexHtml
-            
+
 
     create ["atom.xml"] $ do
         route idRoute
@@ -123,9 +123,9 @@ main = hakyll $ do
         route idRoute
         compile $ do
             pages <- loadAll ("pages/about.markdown" .||. "thoughts/*")
-            let sitemapCtx = listField "pages" sitemapItemCtx (return pages) 
+            let sitemapCtx = listField "pages" sitemapItemCtx (return pages)
                           <> defaultContext
-            makeItem "" 
+            makeItem ""
                 >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
                 >>= removeIndexHtml
                 >>= relativizeUrls
@@ -134,10 +134,10 @@ main = hakyll $ do
         route niceRoute
         compile $ do
             posts <- recentFirst =<< loadAll "thoughts/*"
-            let archiveCtx = listField "posts" postCtx (return posts)  
-                          <> constField "title" "Archive"              
-                          <> constField "nav-selection-archive" "true" 
-                          <> constField "description" mainDescription  
+            let archiveCtx = listField "posts" postCtx (return posts)
+                          <> constField "title" "Archive"
+                          <> constField "nav-selection-archive" "true"
+                          <> constField "description" mainDescription
                           <> defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive-post-list.html" archiveCtx
@@ -149,10 +149,10 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "rendered"
-            let indexCtx = listField "posts" teaserCtx (return posts)   
-                        <> constField "title" "Mechanical Elephant"   
-                        <> constField "nav-selection-thoughts" "true" 
-                        <> constField "description" mainDescription   
+            let indexCtx = listField "posts" teaserCtx (return posts)
+                        <> constField "title" "Mechanical Elephant"
+                        <> constField "nav-selection-thoughts" "true"
+                        <> constField "description" mainDescription
                         <> defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
