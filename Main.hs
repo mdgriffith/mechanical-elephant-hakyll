@@ -38,7 +38,7 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
     removeIndexStr url = case splitFileName url of
         (dir, "index.html") | isLocal dir -> dir
         _                                 -> url
-    isLocal uri = not ("://" `isInfixOf` uri) 
+    isLocal uri = not ("://" `isInfixOf` uri)
 
 
 feedConfig :: FeedConfiguration
@@ -79,6 +79,17 @@ main = hakyll $ do
         route niceBaseRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= relativizeUrls
+            >>= removeIndexHtml
+
+
+    match "thoughts/book/*" $ do
+        route niceRoute
+        let draftCtx = constField "book"   "true"
+                    <> defaultContext
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html" draftCtx
+            >>= loadAndApplyTemplate "templates/base.html" draftCtx
             >>= relativizeUrls
             >>= removeIndexHtml
 
