@@ -1,13 +1,11 @@
+<h1>Archive</h1>
+<ul class="archive">
 $for(posts)$
-  <article class="archive">
-    <header>
-      <a href="$url$" >
-        <div class="article-header">
-          <h1>$title$</h1>
-          <div class="subtitle">$subtitle$</div>
-        </div>
-      </a>
-    </header>
-  </article>
+  <li>
+    <a href="$url$" >
+      $title$ $subtitle$
+    </a>
+  </li>
 $endfor$
-
+</ul>
+$partial("templates/break.svg")$

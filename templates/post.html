@@ -1,20 +1,14 @@
 <article>
-    $if(draft)$
-      <div class="notice draft">
-        <span class="title">Draft!</span>
-        This article is still a draft.  Sooooo......be gentle.
+  <header>
+    <a href="$url$" >
+      <div class="article-header">
+        <h1>$title$</h1>
+        <div class="subtitle">$subtitle$</div>
       </div>
-    $endif$
-    <header>
-      <a href="$url$" >
-        <div class="article-header">
-          <h1>$title$</h1>
-          <div class="subtitle">$subtitle$</div>
-        </div>
-      </a>
-    </header>
-    <div class="post-date">$date$</div>
-    <div>By <a href="/about">$author$</a></div>
-    $body$
-    $partial("templates/break.svg")$
+    </a>
+  </header>
+  <div class="post-date">$date$</div>
+  <div>By <a href="/about">$author$</a></div>
+  $body$
+  $partial("templates/break.svg")$
 </article>

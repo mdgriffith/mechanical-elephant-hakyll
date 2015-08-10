@@ -64,10 +64,10 @@ h1 {
   font-weight:normal;
   padding:0;
   margin:0;
-  margin-bottom:8px;
+  margin-bottom:16px;
 }
 h2 {
-  
+
 }
 a {
     color: @action;
@@ -92,7 +92,7 @@ table {
   border-bottom:solid 1px @grey;
   thead {
     text-transform:uppercase;
-   
+
     border-bottom:solid 1px @grey;
     th {
        border-width:0;
@@ -115,8 +115,9 @@ table {
 
 
 .container {
+  position:relative;
   width: 660px;
-  margin-left: 220px;
+  // margin-left: 220px;
 }
 
 #page article {
@@ -124,6 +125,7 @@ table {
     padding-bottom:35px;
     h1 {
       font-size:1.6em;
+      // margin-bottom:15px;
     }
     header h1 {
       font-size:2em;
@@ -133,15 +135,7 @@ table {
       padding-bottom:10px;
     }
 
-    &.archive {
-      a {
-        text-align:left;
-      }
-      header {
-        margin: 0;
 
-      }
-    }
     &:last-of-type {
       .break {
         display:none;
@@ -155,16 +149,23 @@ table {
     }
 }
 
+ul.archive {
+  margin-top:20px;
+  margin-bottom:160px;
+}
+
 #page {
     height:100%;
     min-height:400px;
     position:relative;
     margin-bottom:10px;
-    margin-top:40px;
+    // margin-top:40px;
     padding-bottom:40px;
     box-sizing: padding-box;
     padding-left:20px;
     padding-right:20px;
+
+    display:inline-block;
 
 
     header {
@@ -245,7 +246,7 @@ table {
         }
     }
     img {
-        
+
           float:left;
           margin-top:20px;
           margin-bottom:15px;
@@ -258,11 +259,14 @@ table {
                 margin:0;
                 margin-left:10px;
           }
-         
+
     }
 }
 
-
+ul {
+  margin-top:-5px;
+  margin-bottom:25px;
+}
 
 header.logo {
   position:relative;
@@ -274,7 +278,7 @@ header.logo {
     font-size:45px;
     color:@darkest;
     font-weight:normal;
-    margin-bottom:px;
+    margin-bottom:0px;
     z-index:100;
     letter-spacing: 4px;
     font-family: Lato;
@@ -283,7 +287,7 @@ header.logo {
   }
 }
 
-nav {
+#page header nav {
     display: inline-block;
     position:relative;
     left:-4px;
@@ -307,6 +311,10 @@ nav {
         transition: border-bottom-color 0.25s ease-in-out;
         -moz-transition: border-bottom-color 0.25s ease-in-out;
         -webkit-transition: border-bottom-color 0.25s ease-in-out;
+
+        color: @action;
+        text-decoration: none;
+
         &:hover {
           border-bottom-color:@darkest;
         }
@@ -326,7 +334,7 @@ nav {
           }
 
         }
-        
+
     }
     .twitter-share-button {
       position:relative;
@@ -337,14 +345,15 @@ nav {
 
 #gears {
     display:block;
-    position:absolute;
-    top:-55px;
-    left:-180px;
+    position:relative;
+
+    margin-top:30px;
     width:170px;
-    height:120px;
-    margin-left:auto;
-    margin-right:auto;
+    height:250px;
+    // margin-left: auto;
+    // margin-right: auto;
     z-index:2;
+    margin-bottom: 25px;
 
     svg {
         position:absolute;
@@ -431,8 +440,8 @@ footer {
       top:-30px;
       z-index:5;
       path {
-        stroke:@grey;
-        fill:@grey;
+        stroke:@darkest;
+        fill:@light;
       }
   }
   hr.strike {
@@ -445,18 +454,50 @@ footer {
 }
 
 
-
+.side-bar {
+  position:relative;
+  float:left;
+  width:200px;
+  margin-left:65px;
+  margin-right:25px;
+  h1 {
+    font-size:35px;
+    color:@darkest;
+    font-weight:normal;
+    margin-bottom:px;
+    z-index:100;
+    letter-spacing: 4px;
+    font-family: Lato;
+    text-transform: uppercase;
+    padding:5px;
+    line-height:1.2em;
+  }
+}
 
 .notice {
   &.draft {
-    background-color:lighten(@action, 20%);
-    padding:20px;
-    margin-left:-20px;
-    margin-right:-20px;
-    margin-bottom:45px;
-    box-sizing: content-box;
-    border: 2px solid @action;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    .title {
+      background-color:lighten(@action, 30%);
+      border: 1px solid @action;
+      .rounded(3px);
+      padding:1px 6px;
+    }
+  }
+  &.book-being-published {
+    .title {
+        // font-family: Lato;
+        // text-transform: uppercase;
+        // font-weight: bold;
+        font-size:1.5em;
+        margin-bottom:8px;
+    }
+    background-color:@lighter;
+    border: 1px solid @grey;
     .rounded(3px);
+    padding:15px;
   }
 }
 
@@ -466,21 +507,49 @@ footer {
 }
 
 
-.button {
+button {
   background-color:@lighter;
-  color:@action;
+  // color:@action;
   border:1px solid @grey;
   padding:2px 7px;
   margin-top:4px;
   margin-bottom: 6px;
   .rounded(3px);
 
-  transition: border-color 0.5s ease-in-out;
-  -moz-transition: border-color 0.5s ease-in-out;
-  -webkit-transition: border-color 0.5s ease-in-out;
+  // margin-top: 55px;
+  // margin-bottom: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+  padding: 5px 20px;
+  display: block;
+  position: relative;
+  // width: 240px;
+  min-width:100px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  .rounded(3px);
+  background-color: @action;
+  // color: #f1f1f1;
+  background-image: -webkit-linear-gradient(top, @action, darken(@action,5%));
+  border-style: solid;
+  border-width: 1px;
+  // border-color: #000;
+  cursor: pointer;
+  background-color:darken(@action,5%);
+  color: @darkest;
+
+
+  transition: border-color 0.25s ease-in-out;
+  -moz-transition: border-color 0.25s ease-in-out;
+  -webkit-transition: border-color 0.25s ease-in-out;
   &:hover {
       // background-color:@gray;
-      border-color:@dark;
+      border-color:@darkest;
+  }
+  input {
+    background:transparent;
+    border:none;
   }
 }
 #mc_embed_signup {

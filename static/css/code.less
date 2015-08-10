@@ -8,6 +8,9 @@ pre {
     padding-top:30px;
     width:100%;
 }
+code {
+  color:@light;
+}
 
 @keyword: #d76a6c;
 @int: #f6d298;
@@ -15,7 +18,7 @@ pre {
 
 .sourceCode { color: @keyword}
 // KeyWordTok
-.sourceCode .kw { color: @operator; }
+.sourceCode .kw { color: @keyword; }
 // DataTypeTok
 .sourceCode .dt { color: @keyword; }
 
@@ -29,23 +32,18 @@ pre {
 .sourceCode .dt { color:@int }
 
 // // CharTok
-// .sourceCode .ch { color: #DC322F; }
+.sourceCode .ch { color: #DC322F; }
 // // StringTok
-// .sourceCode .st { color: #2AA198; }
+.sourceCode .st { color: #2AA198; }
 // // CommentTok
-.sourceCode .co { color: @grey; }
+.sourceCode .co { color: @darker; }
 // // OtherTok
-// .sourceCode .ot { color: #A57800; }
+// .sourceCode .ot { color: @keyword; }
 // // AlertTok
-// .sourceCode .al { color: #CB4B16; font-weight: bold; }
+.sourceCode .al { color: #CB4B16; font-weight: bold; }
 // FunctionTok
 .sourceCode .fu { color: @operator; }
 // // RegionMarkerTok
 // .sourceCode .re { }
 // // ErrorTok
-// .sourceCode .er { color: #D30102; font-weight: bold; }
-
-
-
-
-
+.sourceCode .er { color: #D30102; font-weight: bold; }
