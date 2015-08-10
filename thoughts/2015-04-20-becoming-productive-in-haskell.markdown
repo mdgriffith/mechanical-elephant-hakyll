@@ -7,20 +7,19 @@ author: Matthew Griffith
 description: How I became productive in Haskell
 ---
 
-<p class="drop-first"><span class="run-in">Sometime recently</span> I became proficient enough in Haskell to be productive, and I wanted to capture some of my thoughts on the learning experience before it got too far away.  I do most of my web prototyping in Haskell now, though I still regularly use and enjoy Python.
-</p>
+<span class="run-in"><span class="drop">S</span>ometime recently</span> I became proficient enough in Haskell to be productive, and I wanted to capture some of my thoughts on the learning experience before it got too far away.  I do most of my web prototyping in Haskell now, though I still regularly use and enjoy Python.
+
 
 # Data First
 This is more of a thought on moving from a dynamic language to a static language, but in Haskell the structure of your data is mostly stated in data declarations and type signatures. In Python it's mostly implied by the code.  
 
-<!--more-->
-
-
-My first thought with a Haskell function is "What does the data look like?  This function takes a \____ and returns a \_____ ?", while in Python my first thought is "What does the code say?" 
+My first thought with a Haskell function is "What does the data look like?  This function takes a \____ and returns a \_____ ?", while in Python my first thought is "What does the code say?"
 
 Thinking 'data first' improved my coding, even when coming back to Python.  I more often recognize when the structure of my data changes for no real reason other than it was easy and I was very 'zoomed in' on the problem at the time.  
 
 Limiting changes in data structure also makes the code less complex and easier to understand.
+
+<!--more-->
 
 # The Readability
 One of my main motivations for using Python is readability of code.  Haskell originally looked ugly outside of what seemed to be carefully crafted examples.  Pieces of it looked very clear, but were surrounded by flotsam and jetsam of nonsense.  But it was also obviously powerful.
@@ -50,7 +49,7 @@ In the beginning, though, you kinda have to have faith that, yes, people do read
 
 2. Composing functions out of other, smaller functions offers a big reduction in complexity.  If they're named well, this allows you to write functions that are easy to read.
 
-3. It's concise.  You don't need a ton of code to express a powerful idea. 
+3. It's concise.  You don't need a ton of code to express a powerful idea.
 
 
 # Infix Symbols and Noise
@@ -65,7 +64,7 @@ That being said,  I would say ignore the lens library in the beginning, as it ha
 # A Whole New Vocabulary.
 There are a lot of completely new words to learn when you learn Haskell.  Things like *Functor* and *Monad*.
 
-These words are going to feel _heavier_ to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race tracks, roller coasters, uhh....cereal. 
+These words are going to feel _heavier_ to learn for a few reasons.  When starting to learn imperative programming, a lot of the new vocabulary has at least _some_ familiarity.  A loop brings to mind...well, loops.  Race tracks, roller coasters, uhh....cereal.
 
 We store memories by attaching them to previously made memories, so there is going to be a tendency for your brain to just shut off if too many of these new, heavy words show up in a sentence or paragraph.  I had no associations with the word _Functor_, so it was hard to store.
 
@@ -97,7 +96,7 @@ was a Parsec tutorial.
 
 When you hear about someone becoming productive in Haskell, it mostly involves a description of how they finally understood Monads.  Well, damn, here it goes.
 
-I needed to write a parser.  I had something in Python, but due to my inexperience in writing parsers, the growing complexity of my code was slowing me down considerably. 
+I needed to write a parser.  I had something in Python, but due to my inexperience in writing parsers, the growing complexity of my code was slowing me down considerably.
 
 So, I had some extra time. I thought maybe I should give it a go in Haskell.
 
@@ -119,7 +118,7 @@ Well, reason 0 is I have the opportunity to choose what technology I use.  I kno
 2. I don't have to waste my time on trivial bugs.
 3. The bugs I do encounter are generally more meaningful and lead me to understanding the problem more.  Note: meaningful doesn't always mean harder.
 3. Python taught me not to worry about speed that much.  Haskell agreed with that but let me have it anyway.
-4. Refactoring is a *breeze*.  In Python, I always had a nagging feeling that I forgot to change some small part of your code that would be important later. 
+4. Refactoring is a *breeze*.  In Python, I always had a nagging feeling that I forgot to change some small part of your code that would be important later.
 5. Excellent libraries.  I feel that the basic guarantees of the Haskell language make the standard quality of libraries exceptionally high.  Then there are libraries that were game-changers for me (Parsec and QuickCheck immediately come to mind, but there are others).
 6. [A helpful community](https://gist.github.com/quchen/5280339).
 7. Easy to scale up code to using many cores.
@@ -149,17 +148,3 @@ Good luck!
 This article has been <a href="http://postd.cc/becoming-productive-in-haskell/">translated into Japanese.</a>
 
 And has a <a href="https://www.reddit.com/r/haskell/comments/33mnlc/becoming_productive_in_haskell_coming_from_python/">healthy discussion on reddit.</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
