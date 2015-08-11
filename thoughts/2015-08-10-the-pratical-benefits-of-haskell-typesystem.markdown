@@ -4,7 +4,7 @@ subtitle: of the Haskell Type System
 date: 2015-8-10 12:20
 category: Coding
 author: Matthew Griffith
-description: How I became productive in Haskell
+description: The Basic, Practical Benefits of the Haskell Type System
 ---
 
 <span class="run-in"><span class="drop">O</span>n September 23rd, 1999</span>, the <a href="https://en.wikipedia.org/wiki/Mars_Climate_Orbiter#Cause_of_failure">Mars Climate Orbiter disintegrated</a> as it descended into the Martian Atmosphere 53 kilometers lower than intended.
@@ -27,7 +27,7 @@ Of course, if we were there, we could have...
  * Written more unit tests.
  * Performed more code reviews.  
 
-But, do we expect ourselves to be more vigilant than the rocket scientists at Lockheed Martin? Or always have the time to write unit tests?  Or even beyond that, that they will be comprehensive? Or the agony luxury of having someone else available to review your code?
+But, do we expect ourselves to be more vigilant than the rocket scientists at Lockheed Martin? Or always have the time to write unit tests?  Or even beyond that, that they will be comprehensive? Or the <strike>agony</strike> luxury of having someone else available to review your code?
 
 Sometimes the above options are the only options.
 
@@ -90,7 +90,7 @@ This idea reverberates through third party libraries, too. Not only do you know 
 
 # Making Illegal Values Impossible to Represent
 
-In Haskell, all the values that a type can be are explicitly written in a type declaration. In our above example, the MetricDistance type can only be Miles with a Floating point number. There’s no option for it to be ‘null’, or a String, or anything else.
+In Haskell, all the values that a type can be are explicitly written in a type declaration. In our above example, the MetricDistance type can only be <strike>Miles</strike> Meters with a Floating point number. There’s no option for it to be ‘null’, or a String, or anything else.
 
 You can use the Haskell type system to represent only the states that make sense.
 
@@ -124,6 +124,10 @@ There’s no guessing here. We have a character status and we know exactly what 
 
 Not only that, but in the future if you add another possible value to characterStatus, Haskell will tell you that the showStatus function is no longer exhaustive and you need to add another case.
 
+Of course, there is one issue that you may have noticed. HP is allowed to be a negative number!  That doesn't make any sense.  If HP is negative, the CharacterStatus should be _Dead_.
+
+In that case, you could have a function guarding that value.  But that's for a different article!
+
 
 # Fire the Missiles!
 
@@ -146,92 +150,13 @@ But in Haskell you have tools to guarantee that it doesn’t talk to the outside
 Purity turns out to be a pretty cool property. If a function doesn’t talk to the outside world, when you give it the same arguments, it will always return the same value. This makes understanding your own code much easier.
 
 
-# How Haskell restricts which Functions can do IO
+# But, Types get Complicated!
 
-In Haskell, IO is a container. You run a function that talks with the outside, and it will return the result to you encased in a container.
+Some types can get pretty complicated.  But you have a few tools.
 
-This is just the same as if you were to run a function and it returned a value in a one element list. A list is a container as well.
+Leave out a type signature and Haskell will figure out the types based on the functions you used.
 
-Let’s look at reading a file in Haskell.
-
-Here’s the type signature of the function ‘readFile’.  
-
-```haskell
-readFile :: FilePath -> IO String
-```
-
-First, it takes a FilePath. That may throw you if you’re not used to types, but it’s just a string. When you see FilePath, think ‘a string that has been explicitly labeled as a filepath’.
-
-Now, the readFile function, goes out, does its IO, and returns a String that is inside an IO container.
-
-It’s similar in form to a function that takes a string, and returns that string in a list.
-
-```haskell
-toList :: String -> [String]
-toList str = [str]
-```
-
-Except in Haskell, when a value is in an IO container, you know it came from the outside.
-
-
-# Oh God, Monads
-You may have heard of Monads. You may have even heard they have something to do with IO. Or that they are the mathematical voodoo that prevents you from trying to learn Haskell.
-
-But it’s much simpler than that.
-
-They’re just a few functions that deal with putting things in containers and taking them out.  
-
-That’s it.
-
-IO is a container, so it would make sense be able to get the value out.
-
-Because moving values into and out of containers is so common, it’s given some syntactical sugar called do notation.  
-
-Let’s write a small function that concatenates the contents of two files together and returns them as one string.
-
-```haskell
-catFiles :: FilePath -> FilePath -> IO String
-catFiles path1 path2 = do
-    -- We read a file, which returns a String in a container
-    -- We take the string out of a container
-    -- and put it in the fileContents1 variable
-    fileContents1 <- readFile path1
-
-    -- We do the same thing, take
-    -- the second string out of its container
-    -- and put it in the fileContents2 variable
-    fileContents2 <- readFile path2
-
-    -- We then concatenate the two strings with ++
-    -- We also need to wrap it in an IO container
-    -- because we did IO.
-    --  We do this with a function called ‘return’
-    return (fileContents1 ++ fileContents2)
-    -- The ‘return’ function is not the return statement you’re used to.  
-    -- In this case, it is a function that wraps a value in a container.
-    -- In Haskell, see return, think ‘wrap’
-```
-
-This function interacts with the outside, so it has to return its value in an IO container. The compiler will complain otherwise.
-
-So, in the above example, the back arrow, <- means take a value out of a container and put it in the variable to the left.
-
-And the unfortunately named ‘return’ is a function that puts a value in a container. (It has nothing to do with the return statement in other languages, it’s just a coincidence).
-
-How does Haskell know which container ‘return’ puts the value into?  I keep saying a list is also a container, like IO.  So, why doesn’t ‘return’ put a value into a list?
-
-It knows by the type signature which says ‘this function will give a string that is in an IO container’.
-
-
-# What if there is no type signature?
-
-If you leave out a type signature, Haskell will figure out the types based on the functions you used.
-
-In this case, we used ‘readFile’ in our function body, and  ‘readFile’ returns an IO container. Therefore, it knows that this function is about the IO container. It knows that the back arrow <- will take a value out of an IO container, and it knows that ‘return’ should wrap the result in an IO container as opposed to, say, a list.
-
-This calculating of types is called ‘type inference’.
-
-Actually, this is one of the defining features that Haskell’s type system has over other type systems like the one in Java. This creates succinct code, as every intermediate variable does not have to be declared as a specific type.
+This calculating of types is called __type inference__. This creates succinct code, as every intermediate variable does not have to be declared as a specific type.
 
 Type inference can also help you out directly.
 
@@ -250,7 +175,7 @@ The compiler will tell you:
 Found hole '_' with type IO String
 ```
 
-Following the Ripple of Changes
+# Following the Ripple of Changes
 
 But you get something else with the type system.
 
@@ -269,15 +194,15 @@ In Python or Javascript you just execute the new code and hope for a swift death
 
 # Where does that leave us?
 
-Using Haskell isn’t about looking smarter, or using ‘obscure, academic, few decade old, but too bleeding edge technology’, or even about learning a bunch of math.  
+Using Haskell isn’t about looking smarter, or using ‘obscure, academic, few-decade-old, but too-bleeding-edge technology’, or even about learning a bunch of math.  
 
 For me, it’s about being productive. I’ve adopted Haskell for the same reason I adopted Python a handful of years back…
 
-It’s about quickly writing code.  
+It’s about quickly writing code and finishing something.
 
 Except now there’s an additional step with my Haskell code: relaxing confidently.
 
-It’s about writing code that stays written and doesn’t need to be revisited some number of times over again.  
+It’s about writing code that _stays written_ and doesn’t need to be revisited some number of times over again.  
 
 Because for code that you ship and then actually have to maintain and develop, Haskell is much more productive. Once it’s written in Haskell, it’s much harder to break and much easier to add functionality.
 
@@ -289,10 +214,17 @@ Will you still need to write unit tests? Yeah, but fewer and they’ll be more m
 
 Is there a learning curve? Yes, just like anything new. You’re going to have to think differently. You may even have to suspend your intuition a bit, because it’s going to change. But I believe the benefits are enormous and it doesn’t take very long if you’re actually serious about it.
 
-What about all those freaky words like Monoid, Monad, and Applicative? I will tell you this: those words are making a false promise to you. They promise that they will be hard. They promise that they will be harder than what you’ve already dealt with in other languages.  
+What about all those freaky words like _Monoid_, _Monad_, and _Applicative_? I will tell you this: those words are making a false promise to you. They promise that they will be hard. They promise that they will be harder than what you’ve already dealt with in other languages.  
 
 They are not. In fact, when you learn them you will most likely be underwhelmed at how straightforward they are. I might even go so far as to say the hardest part about them is getting over the word.
 
+Your best approach to learning them is to just start using them. Explanations of their abstract nature will probably throw you in the beginning.  
+
+Do some IO.  [Write a parser](https://www.youtube.com/watch?v=r_Enynu_TV0) using the parsec library.  Chain together a bunch of functions [that return 'Maybe'](http://learnyouahaskell.com/a-fistful-of-monads).
+
+Once you start to write this code and see the similarities, you'll begin to understand that these patterns are _very_ interesting and useful.
+
+Then you may be tempted to write a Monad tutorial like I did in a previous version of this article.  You should probably avoid that.
 
 # So, give Haskell a try!
   * Use <a href="http://www.haskellforall.com/2015/01/use-haskell-for-shell-scripting.html">turtle</a> for type-safe shell scripting in Haskell.  If you have huge shell scripts, the type-safe part turns out to be very useful in maintaining them.
@@ -301,3 +233,7 @@ They are not. In fact, when you learn them you will most likely be underwhelmed 
 
 
 And who knows, maybe we can stop having all these dumb errors.
+
+<aside class="notice">
+ Originally, this article had a mini monad tutorial.  I've removed it as I believe it requires it's own special bit of attention, and I didn't have enough room to address it properly.
+</aside>
