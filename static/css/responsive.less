@@ -27,9 +27,16 @@ header.logo h1 {
 }
 
 .small-version() {
+  .side-bar {
+    height:0;
+    margin-left:0;
+    margin-right:0;
+    width:0px;
+    // margin-right:0px;
+  }
   .container {
     // margin-left:0px;
-    width:100%;
+    width:90%;
     max-width: 660px;
   }
   header.logo {
@@ -58,9 +65,16 @@ header.logo h1 {
 }
 
 .medium-version() {
+  .side-bar {
+    width:0px;
+    margin-right:80px;
+    margin-left:65px;
+    height:auto;
+    // margin-right:25px;
+  }
   .container {
     // margin-left:100px;
-    width:100%;
+    width:90%;
     max-width: 660px;
   }
   header.logo {
@@ -91,13 +105,19 @@ header.logo h1 {
 }
 
 .large-version() {
+  .side-bar {
+    height:auto;
+    margin-left:65px;
+    margin-right:25px;
+    width:200px;
+  }
   .container {
     width: 660px;
     // margin-left: 220px;
   }
   header.logo {
     h1 {
-      font-size: 45px;
+      font-size: 42px;
     }
     #gears {
       left:-180px;

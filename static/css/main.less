@@ -181,6 +181,7 @@ ul.archive {
           h1 {
             color:@darkest;
             margin-top:0;
+            margin-bottom:0;
             line-height:1.2em;
           }
           &:hover {
@@ -275,7 +276,7 @@ header.logo {
   z-index:10;
   text-align:center;
   h1 {
-    font-size:45px;
+    font-size:42px;
     color:@darkest;
     font-weight:normal;
     margin-bottom:0px;
@@ -416,9 +417,9 @@ header.logo {
 }
 
 footer {
-  padding-bottom:100px;
+  // padding-bottom:100px;
   color:@darker;
-  text-align: center;
+  // text-align: center;
   bottom:0px;
   width:100%;
 }
@@ -460,6 +461,16 @@ footer {
   width:200px;
   margin-left:65px;
   margin-right:25px;
+  overflow:hidden;
+
+  transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+
+  transition: margin 0.5s ease-in-out;
+  -moz-transition: margin 0.5s ease-in-out;
+  -webkit-transition: margin 0.5s ease-in-out;
+
   h1 {
     font-size:35px;
     color:@darkest;
@@ -506,6 +517,13 @@ footer {
   direction: rtl;
 }
 
+aside.notice {
+  background-color:@light;
+  padding:15px;
+  margin:15px 0px;
+  border:1px solid @grey;
+  border-radius: 5px;
+}
 
 button {
   background-color:@lighter;
@@ -518,12 +536,12 @@ button {
 
   // margin-top: 55px;
   // margin-bottom: 55px;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   // padding-top: 5px;
   // padding-bottom: 5px;
   padding: 5px 20px;
-  display: block;
+  display: inline-block;
   position: relative;
   // width: 240px;
   min-width:100px;
@@ -554,6 +572,18 @@ button {
 }
 #mc_embed_signup {
   margin-bottom:30px;
+  // padding-top:5px;
+  .mc-field-group{
+    float:left;
+    margin-right:20px;
+    margin-top:15px;
+    input {
+      padding:7px 15px;
+    }
+  }
+  button {
+    margin-top:15px;
+  }
 }
 
 .post-date {
@@ -561,7 +591,10 @@ button {
   color:@dark;
 
 }
-
+.copyright {
+  margin-top:35px;
+  color:@darkest;
+}
 
 /* ==========================================================================
    Helper classes
