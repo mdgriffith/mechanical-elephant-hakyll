@@ -3,20 +3,15 @@ title: About
 date: 2015-04-20
 ---
 
-<div class="boxed drop-first" >
-Matthew Griffith is a full stack developer, designer, and musician.  <br />
-He works as an Informatics Scientist at Evotec.
-</div>
-
-<img class="right" src="/static/img/portrait.jpg" />
-
-<span class="run-in">I'm fascinated by </span> using technology
-to create.
+<span class="run-in"><span class="drop">I</span>'m fascinated by </span> using technology to create.  
 
 As a developer, I work with Haskell, Python,
 and the whole kit and caboodle of the browser frontend. I've done a fair share of Java and PERL as well.
 
+<img class="right" src="/static/img/portrait.jpg" />
+
 As a designer, I love whitespace.  Probably a bit too much.  I mean, look at this site, it's everywhere.  
+
 It's disgusting.
 
 When I'm not coding, designing, or science-ing,

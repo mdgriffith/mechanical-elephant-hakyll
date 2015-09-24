@@ -134,7 +134,25 @@ table {
       padding-top:10px;
       padding-bottom:10px;
     }
-
+    &.brief {
+      padding-top:15px;
+      padding-bottom:15px;
+      header {
+        .article-header {
+          h1 {
+            font-size:1.2em;
+          }
+        }
+        .subtitle {
+          font-size:0.8em;
+        }
+        
+      }
+      
+      header {
+        margin:0;
+      }
+    }
 
     &:last-of-type {
       .break {
@@ -153,6 +171,53 @@ ul.archive {
   margin-top:20px;
   margin-bottom:160px;
 }
+
+
+.subtitle {
+  font-size:22px;
+  color:#838994;
+}
+h1 {
+  margin-top:60px;
+}
+p {
+    margin-bottom:25px;
+    margin-top:10px;
+    line-height:1.6;
+    a {
+      box-shadow: 0px -4px 0px #C19849 inset;
+      color: @darkest;
+    }
+}
+.category-hr {
+  font-size:12px;
+  text-transform:uppercase;
+  // line-height:0px;
+  
+  border-bottom:1px solid @grey;
+  text-align:center;
+  width:75%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+  .category-label {
+    background-color:@white;
+    position:relative;
+    top:15px;
+    display:inline-block;
+    line-height:12px;
+    padding:0 5px;
+
+  }
+}
+.small-break {
+  position:relative;
+  border-bottom:1px solid @grey;
+  width:25%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 #page {
     height:100%;
@@ -230,22 +295,7 @@ ul.archive {
           }
       }
     }
-    .subtitle {
-      font-size:22px;
-      color:#838994;
-    }
-    h1 {
-      margin-top:60px;
-    }
-    p {
-        margin-bottom:25px;
-        margin-top:10px;
-        line-height:1.6;
-        a {
-          box-shadow: 0px -4px 0px #C19849 inset;
-          color: @darkest;
-        }
-    }
+   
     img {
 
           float:left;
@@ -285,6 +335,22 @@ header.logo {
     font-family: Lato;
     text-transform: uppercase;
     padding:5px;
+    
+    .dropped {
+      font-size:60px;
+      position: relative;
+      bottom: -12px;
+
+    }
+    .underlined {
+      border-bottom:1px solid @action;
+    }
+  }
+  .subtitle {
+    text-transform: uppercase;
+    font-size:12px;
+    position:relative;
+    top:5px;
   }
 }
 
@@ -594,7 +660,21 @@ button {
 .copyright {
   margin-top:35px;
   color:@darkest;
+  text-align: center;
 }
+
+.planetary-gear-icon {
+  display:inline-block;
+  // float:left;
+  path {
+    stroke:@darker;
+    fill:@lighter;
+  }
+}
+
+
+
+
 
 /* ==========================================================================
    Helper classes

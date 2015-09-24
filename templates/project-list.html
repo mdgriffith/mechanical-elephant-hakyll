@@ -1,37 +1,74 @@
-$for(posts)$
-  $if(teaser)$
-    <article>
-      <header>
-        <a href="$url$" >
-          <div class="article-header">
-            <h1>$title$</h1>
-            <div class="subtitle">$subtitle$</div>
-          </div>
-        </a>
-      </header>
-      <div class="post-date">$date$</div>
-      <div>By <a href="/about">$author$</a></div>
-      $teaser$
-      <a href="$url$" class="button">Read more...</a>
-    </article>
-    $partial("templates/break.svg")$
-  $else$
-      $body$
-  $endif$
-$endfor$
+
 
 <article>
+$about-body$
+</article>
+
+<div class="category-hr"><div class="category-label">articles</div></div>
+
+$for(articles)$
+  <article class="brief">
+    <header>
+      <a href="$url$" >
+        <div class="article-header">
+          <h1>$title$</h1>
+          <div class="subtitle">$subtitle$</div>
+          <!--<div class="description">$description$</div> -->
+        </div>
+      </a>
+    </header>
+  </article>
+$endfor$
+
+<div class="category-hr"><div class="category-label">procedurally generated</div></div>
+
+<article class="brief">
   <header>
-    <a href="$url$" >
+    <a href="http://wise-manatee.com" >
       <div class="article-header">
-        <h1>$title$</h1>
-        <div class="subtitle">$subtitle$</div>
+        <h1>Animating a low-poly background</h1>
+        <div class="subtitle">Using two.js</div>
+        <!-- <div class="description">In case you wanted code advice from a herbivorous marine mammal.</div>  -->
       </div>
     </a>
   </header>
-  <div class="post-date">$date$</div>
-  <div>By <a href="/about">$author$</a></div>
-  $body$
-
 </article>
-$partial("templates/break.svg")$
+
+
+<div class="small-break"></div>
+
+<article class="brief">
+  <header>
+    <a href="http://wise-manatee.com" >
+      <div class="article-header">
+        <h1>Generating Gear Systems</h1>
+        <div class="subtitle">Because, why not?</div>
+        <!-- <div class="description">In case you wanted code advice from a herbivorous marine mammal.</div>  -->
+      </div>
+    </a>
+    <div class="planetary-gear-icon">
+      $partial("templates/planetary.svg")$
+    </div>
+  </header>
+</article>
+
+
+<div class="category-hr"><div class="category-label">fun</div></div>
+
+<article class="brief">
+  <header>
+    <a href="http://wise-manatee.com" >
+      <div class="article-header">
+        <h1>The Wise Manatee</h1>
+        <div class="subtitle">In case you wanted code advice from a herbivorous marine mammal.</div>
+        <!-- <div class="description"></div>  -->
+      </div>
+    </a>
+  </header>
+</article>
+
+
+
+
+
+
