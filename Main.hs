@@ -2,13 +2,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import           Data.List              (isInfixOf)
-import           Data.Monoid            ((<>),mconcat, mappend)
+import           Data.Monoid            ((<>))
 import           Hakyll
 import           System.FilePath.Posix  (takeBaseName,takeDirectory
                                          ,(</>),splitFileName, replaceDirectory )
 
 --------------------------------------------------------------------------------
-
+-- mconcat, mappend
 -- replace a foo/bar.md by foo/bar/index.html
 -- this way the url looks like: foo/bar in most browsers
 niceRoute :: Routes
@@ -38,6 +38,7 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
     removeIndexStr url = case splitFileName url of
         (dir, "index.html") | isLocal dir -> dir
         _                                 -> url
+    isLocal :: String -> Bool
     isLocal uri = not ("://" `isInfixOf` uri)
 
 
@@ -155,6 +156,23 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/base.html" archiveCtx
                 >>= relativizeUrls
                 >>= removeIndexHtml
+
+    create ["projects.html"] $ do
+        route idRoute
+        compile $ do
+            posts <-  fmap (take 5) . recentFirst =<<  loadAllSnapshots "thoughts/*" "rendered"
+            let indexCtx = listField "posts" teaserCtx (return posts)
+                        <> constField "title" "Mechanical Elephant"
+                        <> constField "nav-selection-thoughts" "true"
+                        <> constField "description" mainDescription
+                        <> defaultContext
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/post-list.html" indexCtx
+                >>= loadAndApplyTemplate "templates/alt-base.html" indexCtx
+                >>= relativizeUrls
+                >>= removeIndexHtml
+
+
 
     create ["index.html"] $ do
         route idRoute

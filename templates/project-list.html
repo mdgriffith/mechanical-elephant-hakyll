@@ -1,0 +1,37 @@
+$for(posts)$
+  $if(teaser)$
+    <article>
+      <header>
+        <a href="$url$" >
+          <div class="article-header">
+            <h1>$title$</h1>
+            <div class="subtitle">$subtitle$</div>
+          </div>
+        </a>
+      </header>
+      <div class="post-date">$date$</div>
+      <div>By <a href="/about">$author$</a></div>
+      $teaser$
+      <a href="$url$" class="button">Read more...</a>
+    </article>
+    $partial("templates/break.svg")$
+  $else$
+      $body$
+  $endif$
+$endfor$
+
+<article>
+  <header>
+    <a href="$url$" >
+      <div class="article-header">
+        <h1>$title$</h1>
+        <div class="subtitle">$subtitle$</div>
+      </div>
+    </a>
+  </header>
+  <div class="post-date">$date$</div>
+  <div>By <a href="/about">$author$</a></div>
+  $body$
+
+</article>
+$partial("templates/break.svg")$
