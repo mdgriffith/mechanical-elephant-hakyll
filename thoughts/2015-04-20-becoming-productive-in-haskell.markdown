@@ -5,6 +5,7 @@ date: 2015-4-19 12:20
 category: Coding
 author: Matthew Griffith
 description: How I became productive in Haskell
+trueUrl: http://mechanical-elephant.com/thoughts/2015-04-20-becoming-productive-in-haskell/
 ---
 
 <span class="run-in"><span class="drop">S</span>ometime recently</span> I became proficient enough in Haskell to be productive, and I wanted to capture some of my thoughts on the learning experience before it got too far away.  I do most of my web prototyping in Haskell now, though I still regularly use and enjoy Python.

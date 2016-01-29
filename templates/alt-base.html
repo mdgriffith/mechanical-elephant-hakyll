@@ -20,50 +20,68 @@
         </style>
     </head>
     <body>
-        <div class="side-bar">
-
-          <div id="gears">
-            <a href="/">
-                <img id="skull" class="elephant" src="/static/img/darker.png" width="170" height="233" />
-                <img id="mortimer" class="elephant" src="/static/img/cover.png" width="170" height="233" />
-                $partial("templates/planetary.svg")$
-            </a>
-          </div>
-          $if(draft)$
-            <div class="notice draft">
-              <span class="title">This piece is still a draft!</span>
-            </div>
-          $endif$
-          $if(book)$
-            <div class="notice book-being-published">
-              <div class="title">Wanna read the book?</div>
-              This is a one of the chapters of a book that is being written!
-
-              <p>Right now, it's being written.</p>
-              <button>Send me more!</button>
-
-
-            </div>
-          $endif$
-        </div>
+        
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <div id="page" class="container">
           <header class="logo">
-              <h1><span class="dropped">M</span><span class="underlined">echanical Elephan</span><span class="dropped">t</span></h1>
-              <span class="subtitle">The code, design, and thoughts of Matthew Griffith</span>
+              <h1>
+                <span class="dropped">M</span><span class="underlined">echanical <span class="elephant-line">Elephan</span></span><span class="dropped elephant-line">t</span></span>
+                <div class="subtitle">The code, design, and thoughts of Matthew Griffith</div>
+              </h1>
+              
+              <div id="gears">
+                <a href="/">
+                    <img id="skull" class="elephant" src="/static/img/darker.png" width="170" height="233" />
+                    <img id="mortimer" class="elephant" src="/static/img/cover.png" width="170" height="233" />
+                    $partial("templates/planetary.svg")$
+                </a>
+              </div>
           </header>
           $body$
-
           <footer class="container">
-              <div class="copyright">copyright Matthew Griffith 2015</div>
+              <div class="category-hr"><div class="category-label"><small>Copyright Matthew Griffith, 2015</small></div></div>
           </footer>
         </div>
 
 
+
+        <script type="text/javascript" src="static/js/vendor/two.min.js"></script>
+        <script type="text/javascript" src="static/js/water.js"></script>
+        <script type="text/javascript">
+          (function() {
+            // blue = [11,34,71]
+            var blue = [19,78,138];
+            var gold = [209, 178, 119];
+
+            var base = [255,255,255];
+            // # #black and White
+            var bg = document.getElementById("poly-icon");
+            // h = bg.offsetHeight;
+            // w = bg.offsetWidth;
+            h = 100;
+            w = 100;
+          
+
+
+            var colors = [
+              new window.ColorPoint(0.5, 0.5, { rgb:gold, falloff_radius:w*0.8, falloff_easing:window.Easing.flat(0.7) }),
+            ]
+            var water = new window.PolyBackground(bg, 10, 5, colors, blue);
+
+            water.draw();
+            water.animate(7, 2000);
+
+          })();
+        </script>
+
+
+
+        <!-- twitter -->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
         <!-- Piwik -->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <script type="text/javascript">
           var _paq = _paq || [];
           _paq.push(['trackPageView']);
@@ -77,7 +95,8 @@
           })();
         </script>
         <noscript><p><img src="http://analytics.mechanical-elephant.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($$) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $$mcj = jQuery.noConflict(true);</script>
+        <!--
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($$) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $$mcj = jQuery.noConflict(true);</script>-->
         <!-- End Piwik Code -->
     </body>
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Low-Poly Animations</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/railscasts.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+        <style>
+          body {
+            font-family:'Open Sans';
+          }
+          header {
+            font-size:1.5em;
+          }
+          a {
+            color:#A5C261;
+            text-decoration:none;
+            background-color:rgba(0,0,0,0.4);
+            padding:5px 15px;
+            border-radius:3px;
+
+          }
+          #low-poly {
+            position:absolute;
+            left:-100px;
+            top:-100px;
+            width:110%;
+            height:110%;
+            z-index:-5;
+          }
+          .description {
+            background-color:rgba(0,0,0,0.2);
+            padding:45px;
+            color:white;
+            display:inline-block;
+
+          }
+          .hljs {
+            background-color:rgba(0,0,0,0.4);
+          }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="description">
+          <header>Low Poly Animation</header>
+          <p>A web experiment on generating low poly animated backgrounds.</p>
+          <a href="https://github.com/mdgriffith/low-poly-background" >Code on Github</a>
+          <p>With lowpoly.js loaded:</p>
+
+          <pre><code class="js">
+var gold = [209, 178, 119];
+var light = [220,220,220];
+
+var bg = document.getElementById("low-poly");
+var width = bg.offsetWidth;
+var height = bg.offsetHeight;
+
+
+two = new Two({
+    'type': Two.Types.canvas,
+    width:width,
+    height:height
+}).appendTo(bg)
+
+
+var mesh = new window.Mesh(two, {'x':30, 'y':30, 
+                                 'width':width, 'height':height, 
+                                 'resolution':70 });
+mesh.bgColor = light;
+mesh.varyBy(50);
+mesh.colors =  [
+  new window.ColorPoint(400, 200, { rgb:gold, 
+                                    falloff_radius:300, 
+                                    falloff_easing:window.Easing.flat(0.7) }),
+]
+
+mesh.draw();
+mesh.animateVariance({'delta':20, 'cyclePerMS':1000});
+          </code></pre>
+        </div>
+
+
+        <div id="low-poly"></div>
+        <script type="text/javascript" src="/static/js/vendor/two.min.js"></script>
+        <script type="text/javascript" src="/static/js/lowpoly.js"></script>
+        <script type="text/javascript">
+          hljs.initHighlightingOnLoad();
+          (function() {
+            
+            var gold = [209, 178, 119];
+            var light = [220,220,220];
+
+            var bg = document.getElementById("low-poly");
+            var width = bg.offsetWidth;
+            var height = bg.offsetHeight;
+
+       
+            two = new Two({
+                'type': Two.Types.canvas,
+                width:width,
+                height:height
+            }).appendTo(bg)
+
+
+            var mesh = new window.Mesh(two, {'x':30, 'y':30, 
+                                             'width':width, 'height':height, 
+                                             'resolution':70 });
+            mesh.bgColor = light;
+            mesh.varyBy(50);
+            mesh.colors =  [
+              new window.ColorPoint(400, 200, { rgb:gold, 
+                                                falloff_radius:300, 
+                                                falloff_easing:window.Easing.flat(0.7) }),
+            ]
+
+            mesh.draw();
+            mesh.animateVariance({'delta':20, 'cyclePerMS':1000});
+
+          })();
+        </script>
+    </body>
+</html>

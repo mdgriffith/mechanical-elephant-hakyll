@@ -21,18 +21,37 @@ header.logo h1 {
 
 
 #gears {
-  transition: left 0.5s ease-in-out;
-  -moz-transition: left 0.5s ease-in-out;
-  -webkit-transition: left 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -moz-transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  -webkit-transition: left 0.5s ease-in-out,opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .small-version() {
   .side-bar {
-    height:0;
-    margin-left:0;
-    margin-right:0;
     width:0px;
-    // margin-right:0px;
+  }
+  .indent {
+    margin-left:0px;
+  }
+  #gears {
+    transform: scale(0.50, 0.50);
+    // left:50%;
+    // top:-140px;
+    // opacity:0.2;
+    // margin-left:-90px;
+    left: -140px;
+    top: -105px;
+    opacity:1;
+  }
+  img.portrait {
+    width:100px;
+    height:auto;
+  }
+  #page {
+    // margin-left:5px;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
   }
   .container {
     // margin-left:0px;
@@ -40,9 +59,32 @@ header.logo h1 {
     max-width: 660px;
   }
   header.logo {
+    margin-left:100px;
+    text-align:left;
     h1 {
+      margin-top:0;
       font-size: 20px;
+      line-height: 18px;
+      display:inline-block;
+      .dropped {
+        font-size: inherit;
+        // border-bottom:1px solid #c19849;
+        line-height: 18px;
+        bottom:0;
+        // position: relative;
+        // bottom: -6px;
+      }
+      .underlined {
+        border-bottom:none;
+      }
+      .elephant-line {
+        border-bottom:1px solid #c19849;
+      }
+      .subtitle {
+        font-size:10px;
+      }
     }
+    
   }
 
   #page header a {
@@ -57,7 +99,7 @@ header.logo h1 {
     display:block;
   }
   #page img {
-    float:left;
+    // float:left;
     &.right {
       float:right;
     }
@@ -66,38 +108,51 @@ header.logo h1 {
 
 .medium-version() {
   .side-bar {
-    width:0px;
-    margin-right:80px;
-    margin-left:65px;
-    height:auto;
-    // margin-right:25px;
+    width:105px;
+  }
+  #page {
+    margin-left:125px;
+  }
+  #gears {
+    transform: scale(0.75, 0.75);
+    left: -120px;
+    top: -80px;
+    opacity:1;
+    margin-left:0;
   }
   .container {
-    // margin-left:100px;
     width:90%;
     max-width: 660px;
   }
   header.logo {
+    margin-left:70px;
+    text-align:center;
     h1 {
       font-size: 30px;
-    }
-    #gears {
-      left:-80px;
-    }
-  }
-  #page header a {
-      &:before{
-        opacity:1;
+      line-height: 25px;
+      margin-top:10px;
+      display:inline-block;
+      .dropped {
+        font-size: 40px;
+        position: relative;
+        bottom: -6px;
       }
-      &:after{
-        opacity:1;
+      .underlined {
+        border-bottom:1px solid #c19849;
       }
+      .elephant-line {
+        border-bottom:none; 
+      }
+      .subtitle {
+        font-size:12px;
+      }
+    }
+    
   }
-  .share-links {
-    display:block;
+  .indent {
+    margin-left:90px;
   }
   #page img {
-    float:left;
     &.right {
       float:right;
     }
@@ -105,37 +160,48 @@ header.logo h1 {
 }
 
 .large-version() {
+  #page {
+    margin-left:205px;
+  }
   .side-bar {
-    height:auto;
-    margin-left:65px;
-    margin-right:25px;
-    width:200px;
+    width:185px;
   }
   .container {
     width: 660px;
     // margin-left: 220px;
   }
+  #gears {
+    transform: none;
+    left:-180px;
+    top:-90px;
+    opacity:1;
+  }
   header.logo {
+    margin-left:0;
+    text-align:center;
     h1 {
       font-size: 42px;
-    }
-    #gears {
-      left:-180px;
-    }
-  }
-  #page header a {
-      &:before{
-        opacity:1;
+      line-height: 35px;
+      margin-top: 60px;
+      display:block;
+
+      .dropped {
+        font-size:60px;
+        position: relative;
+        bottom: -12px;
+
       }
-      &:after{
-        opacity:1;
+      .subtitle {
+        font-size:12px;
       }
+    }
+    
   }
-  .share-links {
-    display:inline-block;
+  .indent {
+    margin-left:0;
   }
   #page img {
-    float:left;
+    // float:left;
     &.right {
       float:right;
     }

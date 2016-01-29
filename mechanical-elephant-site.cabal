@@ -27,6 +27,7 @@ executable mechanical-elephant-site
     base,
     directory,
     filepath,
+    tagsoup,
     hakyll,
     pandoc,
     old-locale

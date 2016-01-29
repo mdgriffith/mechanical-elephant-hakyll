@@ -5,6 +5,7 @@ date: 2015-8-10 12:20
 category: Coding
 author: Matthew Griffith
 description: The Basic, Practical Benefits of the Haskell Type System
+trueUrl: http://mechanical-elephant.com/thoughts/2015-08-10-the-pratical-benefits-of-haskell-typesystem/
 ---
 
 <span class="run-in"><span class="drop">O</span>n September 23rd, 1999</span>, the <a href="https://en.wikipedia.org/wiki/Mars_Climate_Orbiter#Cause_of_failure">Mars Climate Orbiter disintegrated</a> as it descended into the Martian Atmosphere 53 kilometers lower than intended.

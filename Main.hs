@@ -3,7 +3,8 @@
 
 import           Data.List              (isInfixOf)
 import           Data.Monoid            ((<>))
-import           Hakyll
+import           Hakyll hiding (withUrls)
+import qualified Text.HTML.TagSoup               as TS
 import           System.FilePath.Posix  (takeBaseName,takeDirectory
                                          ,(</>),splitFileName, replaceDirectory )
 
@@ -25,8 +26,8 @@ baseRoute = customRoute base
 
 niceBaseRoute :: Routes
 niceBaseRoute = customRoute base
-    where
-      base ident = takeBaseName (toFilePath ident) </> "index.html"
+  where
+    base ident = takeBaseName (toFilePath ident) </> "index.html"
 
 
 
@@ -40,6 +41,24 @@ removeIndexHtml item = return $ fmap (withUrls removeIndexStr) item
         _                                 -> url
     isLocal :: String -> Bool
     isLocal uri = not ("://" `isInfixOf` uri)
+
+
+
+
+--------------------------------------------------------------------------------
+-- | Apply a function to each URL on a webpage
+withUrls :: (String -> String) -> String -> String
+withUrls f = withTags tag
+  where
+    tag (TS.TagOpen s a) = TS.TagOpen s $ map attr a
+    tag x                = x
+    attr (k, v)          = (k, if isUrlAttribute k then f v else v)
+
+isUrlAttribute :: String -> Bool
+isUrlAttribute = (`elem` ["src", "href", "data", "data-url"])
+
+
+
 
 
 feedConfig :: FeedConfiguration
@@ -65,11 +84,18 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "static/js/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "static/js/vendor/*" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     match "pages/styleguide.markdown" $ do
         route niceBaseRoute
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/base.html" defaultContext
+            >>= loadAndApplyTemplate "templates/alt-base.html" defaultContext
             >>= relativizeUrls
             >>= removeIndexHtml
 
@@ -96,11 +122,13 @@ main = hakyll $ do
 
     match "thoughts/*" $ do
         route niceRoute
+        let thoughtCtx = constField "nav"   "true"
+                      <> postCtx
         compile $ pandocCompiler
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/post.html" postCtx
+            >>= loadAndApplyTemplate "templates/post.html" thoughtCtx
             >>= saveSnapshot "rendered"
-            >>= loadAndApplyTemplate "templates/base.html" postCtx
+            >>= loadAndApplyTemplate "templates/alt-base.html" thoughtCtx
             >>= relativizeUrls
             >>= removeIndexHtml
 
@@ -144,13 +172,23 @@ main = hakyll $ do
             -- >>= relativizeUrls
 
 
+    create ["low-poly.html"] $ do
+        route niceRoute
+        compile $ do
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/low-poly.html" defaultContext
+                -- >>= removeIndexHtml
+                -- >>= relativizeUrls
+
+
+
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "thoughts/*"
+            posts <- chronological =<< loadAll "thoughts/*"
             aboutBody <- loadBody "pages/about.markdown" :: Compiler String
             let indexCtx = listField "articles" postCtx (return posts)
-                        <> constField "title" "Projects"
+                        <> constField "title" "Mechanical Elephant"
                         <> constField "nav-selection-thoughts" "true"
                         <> constField "description" mainDescription
                         <> constField "about-body" aboutBody
